@@ -201,15 +201,15 @@ class __TwigTemplate_e0dd5f822d7e8e333e3771e4b672b90c3ec4ed3ab781b7381ffac6c32ff
 \t\ttype=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
 
 \t\t{#
-\t\t\t\t\t\t\t\t\t\t        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-\t\t\t\t\t\t\t\t\t\t        See https://symfony.com/doc/current/security/remember_me.html
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t        <div class=\"checkbox mb-3\">
-\t\t\t\t\t\t\t\t\t\t            <label>
-\t\t\t\t\t\t\t\t\t\t                <input type=\"checkbox\" name=\"_remember_me\"> Remember me
-\t\t\t\t\t\t\t\t\t\t            </label>
-\t\t\t\t\t\t\t\t\t\t        </div>
-\t\t\t\t\t\t\t\t\t\t    #}
+\t\t\t\t\tUncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+\t\t\t\t\tSee https://symfony.com/doc/current/security/remember_me.html
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t<div class=\"checkbox mb-3\">
+\t\t\t\t\t\t<label>
+\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"_remember_me\"> Remember me
+\t\t\t\t\t\t</label>
+\t\t\t\t\t</div>
+\t\t\t\t#}
 
 \t\t<button class=\"btn btn-lg btn-primary\" type=\"submit\">
 \t\t\tSign in

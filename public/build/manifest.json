@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "build/app.css": "/build/app.ce4c4ea4.css",
-=======
-  "build/app.css": "/build/app.8e6589c9.css",
->>>>>>> 5134d8dfe4af6c757d9cfb2d0861ece61fa2127c
+  "build/app.css": "/build/app.45a91847.css",
   "build/app.js": "/build/app.7e2a2a3b.js",
   "build/runtime.js": "/build/runtime.8b723eac.js",
   "build/758.65dbc53b.js": "/build/758.65dbc53b.js"

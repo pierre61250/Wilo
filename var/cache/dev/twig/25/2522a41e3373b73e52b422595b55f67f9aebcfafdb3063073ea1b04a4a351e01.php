@@ -85,48 +85,6 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "\t<style>
-\t\t.example-wrapper {
-\t\t\tmargin: 1em auto;
-\t\t\tmax-width: 800px;
-\t\t\twidth: 95%;
-\t\t\tfont: 18px / 1.5 sans-serif;
-\t\t}
-\t\t.example-wrapper code {
-\t\t\tbackground: #F5F5F5;
-\t\t\tpadding: 2px 6px;
-\t\t}
-\t</style>
-
-\t<div class=\"example-wrapper\">
-\t\t<h1>Hello
-\t\t\t";
-        // line 22
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 22, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-\t\tThis friendly message is coming from:
-\t\t<ul>
-\t\t\t<li>Your controller at
-\t\t\t\t<code>
-\t\t\t\t\t<a href=\"";
-        // line 28
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/pierr/Desktop/wilo/src/Controller/MainController.php", 0), "html", null, true);
-        echo "\">src/Controller/MainController.php</a>
-\t\t\t\t</code>
-\t\t\t</li>
-\t\t\t<li>Your template at
-\t\t\t\t<code>
-\t\t\t\t\t<a href=\"";
-        // line 33
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/pierr/Desktop/wilo/templates/main/index.html.twig", 0), "html", null, true);
-        echo "\">templates/main/index.html.twig</a>
-\t\t\t\t</code>
-\t\t\t</li>
-\t\t</ul>
-\t</div>
-";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -147,7 +105,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 
     public function getDebugInfo()
     {
-        return array (  123 => 33,  115 => 28,  106 => 22,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -157,39 +115,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 {% block title %}Wilo
 {% endblock %}
 
-{% block body %}
-\t<style>
-\t\t.example-wrapper {
-\t\t\tmargin: 1em auto;
-\t\t\tmax-width: 800px;
-\t\t\twidth: 95%;
-\t\t\tfont: 18px / 1.5 sans-serif;
-\t\t}
-\t\t.example-wrapper code {
-\t\t\tbackground: #F5F5F5;
-\t\t\tpadding: 2px 6px;
-\t\t}
-\t</style>
-
-\t<div class=\"example-wrapper\">
-\t\t<h1>Hello
-\t\t\t{{ controller_name }}! ✅</h1>
-
-\t\tThis friendly message is coming from:
-\t\t<ul>
-\t\t\t<li>Your controller at
-\t\t\t\t<code>
-\t\t\t\t\t<a href=\"{{ 'C:/Users/pierr/Desktop/wilo/src/Controller/MainController.php'|file_link(0) }}\">src/Controller/MainController.php</a>
-\t\t\t\t</code>
-\t\t\t</li>
-\t\t\t<li>Your template at
-\t\t\t\t<code>
-\t\t\t\t\t<a href=\"{{ 'C:/Users/pierr/Desktop/wilo/templates/main/index.html.twig'|file_link(0) }}\">templates/main/index.html.twig</a>
-\t\t\t\t</code>
-\t\t\t</li>
-\t\t</ul>
-\t</div>
-{% endblock %}
+{% block body %}{% endblock %}
 ", "main/index.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\main\\index.html.twig");
     }
 }
