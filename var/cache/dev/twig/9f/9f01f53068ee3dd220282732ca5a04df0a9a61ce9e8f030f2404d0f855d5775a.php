@@ -60,16 +60,21 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 14
         echo "
-\t\t";
+\t\t<link rel=\"icon\" type=\"image/png\" href=\"";
         // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/icon3.png"), "html", null, true);
+        echo "\"/>
+
+\t\t";
+        // line 17
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 18
+        // line 20
         echo "\t</head>
 \t<body>
 \t\t";
-        // line 20
+        // line 22
         $this->displayBlock('body', $context, $blocks);
-        // line 21
+        // line 23
         echo "\t</body>
 </html>
 ";
@@ -124,7 +129,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     }
 
-    // line 15
+    // line 17
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -134,9 +139,9 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 16
+        // line 18
         echo "\t\t\t";
-        // line 17
+        // line 19
         echo "\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -146,7 +151,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     }
 
-    // line 20
+    // line 22
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -169,9 +174,14 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  150 => 20,  140 => 17,  138 => 16,  128 => 15,  115 => 12,  105 => 11,  85 => 6,  73 => 21,  71 => 20,  67 => 18,  65 => 15,  62 => 14,  59 => 11,  56 => 8,  54 => 6,  47 => 1,);
+        return array (  155 => 22,  145 => 19,  143 => 18,  133 => 17,  120 => 12,  110 => 11,  90 => 6,  78 => 23,  76 => 22,  72 => 20,  70 => 17,  65 => 15,  62 => 14,  59 => 11,  56 => 8,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -185,10 +195,12 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 \t\t\t{% endblock %}
 \t\t</title>
 \t\t{# Run `composer require symfony/webpack-encore-bundle`
-\t\t\t\t\t\t\t\t           and uncomment the following Encore helpers to start using Symfony UX #}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t           and uncomment the following Encore helpers to start using Symfony UX #}
 \t\t{% block stylesheets %}
 \t\t\t<link href=\"{{ asset('build/app.css')}}\" rel=\"stylesheet\">
 \t\t{% endblock %}
+
+\t\t<link rel=\"icon\" type=\"image/png\" href=\"{{ asset('icon/icon3.png')}}\"/>
 
 \t\t{% block javascripts %}
 \t\t\t{#{{ encore_entry_script_tags('app') }}#}
