@@ -86,45 +86,60 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
-        echo "\t";
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "user", [], "any", false, false, false, 7)) {
-            // line 8
+        echo "\t<ul id=\"navigation\">
+\t\t<li>
+\t\t\t<a href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\" title=\"Accueil\">Accueil</a>
+\t\t</li>
+\t\t<li>
+\t\t\t<a href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("jeux");
+        echo "\" title=\"Jeux\">Jeux</a>
+\t\t</li>
+\t</ul>
+\t";
+        // line 15
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
+            // line 16
             echo "\t\t<div class=\"connectOrNot\">
 \t\t\t<div class=\"avatar\">
 \t\t\t\t<img src=\"";
-            // line 10
+            // line 18
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/avatar/avatar2.png"), "html", null, true);
             echo "\" alt=\"Avatar player\">
 \t\t\t</div>
 \t\t\t<div class=\"pseudo\">
 \t\t\t\t";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "pseudo", [], "any", false, false, false, 13), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "pseudo", [], "any", false, false, false, 21), "html", null, true);
             echo "
 \t\t\t</div>
 \t\t\t<div class=\"jetons\">
 \t\t\t\t<img src=\"";
-            // line 16
+            // line 24
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
             echo "\" alt=\"Icone jeton\">
 \t\t\t\t";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17), "jetons", [], "any", false, false, false, 17), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "user", [], "any", false, false, false, 25), "jetons", [], "any", false, false, false, 25), "html", null, true);
             echo "
 \t\t\t</div>
 \t\t\t<div id=\"deconnexion\">
 \t\t\t\t<a href=\"";
-            // line 20
+            // line 28
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
 \t\t\t</div>
 \t\t</div>
 \t";
         } else {
-            // line 24
+            // line 32
             echo "\t\t<div class=\"connexionBtn\">
 \t\t\t<a href=\"";
-            // line 25
+            // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">
 \t\t\t\t<button>Connexion</button>
@@ -132,10 +147,10 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 \t\t</div>
 \t";
         }
-        // line 30
+        // line 38
         echo "\t<div class=\"nousRejoindre\">
 \t\t<a href=\"";
-        // line 31
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\">
 \t\t\t<button>Nous Rejoindre</button>
@@ -162,7 +177,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 
     public function getDebugInfo()
     {
-        return array (  139 => 31,  136 => 30,  128 => 25,  125 => 24,  118 => 20,  112 => 17,  108 => 16,  102 => 13,  96 => 10,  92 => 8,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  154 => 39,  151 => 38,  143 => 33,  140 => 32,  133 => 28,  127 => 25,  123 => 24,  117 => 21,  111 => 18,  107 => 16,  105 => 15,  99 => 12,  93 => 9,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -173,6 +188,14 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 {% endblock %}
 
 {% block body %}
+\t<ul id=\"navigation\">
+\t\t<li>
+\t\t\t<a href=\"{{path('home')}}\" title=\"Accueil\">Accueil</a>
+\t\t</li>
+\t\t<li>
+\t\t\t<a href=\"{{path('jeux')}}\" title=\"Jeux\">Jeux</a>
+\t\t</li>
+\t</ul>
 \t{% if app.user %}
 \t\t<div class=\"connectOrNot\">
 \t\t\t<div class=\"avatar\">

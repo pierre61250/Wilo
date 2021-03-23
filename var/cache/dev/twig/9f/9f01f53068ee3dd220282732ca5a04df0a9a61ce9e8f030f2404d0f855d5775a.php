@@ -52,31 +52,32 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 \t\t\t";
         // line 6
         $this->displayBlock('title', $context, $blocks);
-        // line 8
+        // line 9
         echo "\t\t</title>
 \t\t";
-        // line 10
+        // line 11
         echo "\t\t";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 14
         echo "
 \t\t<link rel=\"icon\" type=\"image/png\" href=\"";
-        // line 14
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/icon1.png"), "html", null, true);
         echo "\"/>
 \t</head>
 \t<body>
 \t\t";
-        // line 17
-        $this->displayBlock('body', $context, $blocks);
         // line 18
-        echo "\t\t<script>
+        $this->displayBlock('body', $context, $blocks);
+        // line 19
+        echo "
+\t\t<script>
 \t\t\tconsole.log(\"Failed to open the specified link\");
 \t\t</script>
 \t\t";
-        // line 21
+        // line 23
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 24
+        // line 26
         echo "\t</body>
 </html>
 ";
@@ -98,7 +99,8 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Wilo
+        // line 7
+        echo "\t\t\t\tWilo
 \t\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -108,7 +110,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     }
 
-    // line 10
+    // line 11
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -118,7 +120,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 11
+        // line 12
         echo "\t\t\t<link href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/app.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
@@ -131,7 +133,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     }
 
-    // line 17
+    // line 18
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -149,7 +151,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     }
 
-    // line 21
+    // line 23
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -159,7 +161,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 22
+        // line 24
         echo "\t\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -184,7 +186,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     public function getDebugInfo()
     {
-        return array (  163 => 22,  153 => 21,  135 => 17,  122 => 11,  112 => 10,  92 => 6,  80 => 24,  78 => 21,  73 => 18,  71 => 17,  65 => 14,  62 => 13,  59 => 10,  56 => 8,  54 => 6,  47 => 1,);
+        return array (  165 => 24,  155 => 23,  137 => 18,  124 => 12,  114 => 11,  103 => 7,  93 => 6,  81 => 26,  79 => 23,  73 => 19,  71 => 18,  65 => 15,  62 => 14,  59 => 11,  56 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -194,7 +196,8 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 \t<head>
 \t\t<meta charset=\"UTF-8\">
 \t\t<title>
-\t\t\t{% block title %}Wilo
+\t\t\t{% block title %}
+\t\t\t\tWilo
 \t\t\t{% endblock %}
 \t\t</title>
 \t\t{# Run `composer require symfony/webpack-encore-bundle' and uncomment the following Encore helpers to start using Symfony UX #}
@@ -206,6 +209,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 \t</head>
 \t<body>
 \t\t{% block body %}{% endblock %}
+
 \t\t<script>
 \t\t\tconsole.log(\"Failed to open the specified link\");
 \t\t</script>
