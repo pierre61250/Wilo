@@ -62,7 +62,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         echo "
 \t\t<link rel=\"icon\" type=\"image/png\" href=\"";
         // line 14
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/icon3.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/icon1.png"), "html", null, true);
         echo "\"/>
 
 \t\t";
@@ -96,7 +96,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!
+        echo "Wilo
 \t\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -140,9 +140,10 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 17
-        echo "\t\t\t";
-        // line 18
-        echo "\t\t";
+        echo "\t\t\t<script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/app.js"), "html", null, true);
+        echo "\"></script>
+\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -181,7 +182,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     public function getDebugInfo()
     {
-        return array (  155 => 21,  145 => 18,  143 => 17,  133 => 16,  120 => 11,  110 => 10,  90 => 6,  78 => 22,  76 => 21,  72 => 19,  70 => 16,  65 => 14,  62 => 13,  59 => 10,  56 => 8,  54 => 6,  47 => 1,);
+        return array (  156 => 21,  143 => 17,  133 => 16,  120 => 11,  110 => 10,  90 => 6,  78 => 22,  76 => 21,  72 => 19,  70 => 16,  65 => 14,  62 => 13,  59 => 10,  56 => 8,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -191,7 +192,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 \t<head>
 \t\t<meta charset=\"UTF-8\">
 \t\t<title>
-\t\t\t{% block title %}Welcome!
+\t\t\t{% block title %}Wilo
 \t\t\t{% endblock %}
 \t\t</title>
 \t\t{# Run `composer require symfony/webpack-encore-bundle' and uncomment the following Encore helpers to start using Symfony UX #}
@@ -199,10 +200,10 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 \t\t\t<link href=\"{{ asset('build/app.css')}}\" rel=\"stylesheet\">
 \t\t{% endblock %}
 
-\t\t<link rel=\"icon\" type=\"image/png\" href=\"{{ asset('icon/icon3.png')}}\"/>
+\t\t<link rel=\"icon\" type=\"image/png\" href=\"{{ asset('icon/icon1.png')}}\"/>
 
 \t\t{% block javascripts %}
-\t\t\t{#{{ encore_entry_script_tags('app') }}#}
+\t\t\t<script src=\"{{ asset('build/app.js')}}\"></script>
 \t\t{% endblock %}
 \t</head>
 \t<body>
