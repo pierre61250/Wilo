@@ -132,6 +132,16 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 \t\t</div>
 \t";
         }
+        // line 30
+        echo "\t<div class=\"nousRejoindre\">
+\t\t<a href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">
+\t\t\t<button>Nous Rejoindre</button>
+\t\t</a>
+\t</div>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -152,7 +162,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 
     public function getDebugInfo()
     {
-        return array (  128 => 25,  125 => 24,  118 => 20,  112 => 17,  108 => 16,  102 => 13,  96 => 10,  92 => 8,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  139 => 31,  136 => 30,  128 => 25,  125 => 24,  118 => 20,  112 => 17,  108 => 16,  102 => 13,  96 => 10,  92 => 8,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,6 +196,11 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 \t\t\t</a>
 \t\t</div>
 \t{% endif %}
+\t<div class=\"nousRejoindre\">
+\t\t<a href=\"{{ path('app_register') }}\">
+\t\t\t<button>Nous Rejoindre</button>
+\t\t</a>
+\t</div>
 {% endblock %}
 ", "main/index.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\main\\index.html.twig");
     }
