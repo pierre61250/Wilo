@@ -104,7 +104,9 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
         // line 15
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
             // line 16
-            echo "\t\t<div class=\"connectOrNot\">
+            echo "\t\t<div class=\"connectOrNot\" data-user=\"";
+            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "jetons", [], "any", false, false, false, 16)), "html", null, true);
+            echo "\">
 \t\t\t<div class=\"avatar\">
 \t\t\t\t<img src=\"";
             // line 18
@@ -177,7 +179,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 
     public function getDebugInfo()
     {
-        return array (  154 => 39,  151 => 38,  143 => 33,  140 => 32,  133 => 28,  127 => 25,  123 => 24,  117 => 21,  111 => 18,  107 => 16,  105 => 15,  99 => 12,  93 => 9,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  156 => 39,  153 => 38,  145 => 33,  142 => 32,  135 => 28,  129 => 25,  125 => 24,  119 => 21,  113 => 18,  107 => 16,  105 => 15,  99 => 12,  93 => 9,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -197,7 +199,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 \t\t</li>
 \t</ul>
 \t{% if app.user %}
-\t\t<div class=\"connectOrNot\">
+\t\t<div class=\"connectOrNot\" data-user=\"{{ app.user.jetons|json_encode }}\">
 \t\t\t<div class=\"avatar\">
 \t\t\t\t<img src=\"{{ asset('icon/avatar/avatar2.png')}}\" alt=\"Avatar player\">
 \t\t\t</div>

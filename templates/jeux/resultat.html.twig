@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Wilo
+{% endblock %}
+
+{% block body %}
+	<ul id="navigation">
+		<li>
+			<a href="{{path('home')}}" title="Accueil">Accueil</a>
+		</li>
+		<li>
+			<a href="{{path('jeux')}}" title="Jeux">Jeux</a>
+		</li>
+	</ul>
+{% endblock %}

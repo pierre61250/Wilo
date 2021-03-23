@@ -11,8 +11,11 @@ import './styles/pfc.css';
 
 // start the Stimulus application
 import './bootstrap';
+const axios = require('axios');
 
-console.log("Failed to open the specified link2");
+var userRating = document.querySelector('.connectOrNot');
+var user = userRating.dataset.user;
+console.log(user);
 
 const buttons = document.querySelectorAll("button");
 // const resultat = document.querySelector(".resultat");
@@ -33,9 +36,12 @@ for (let i = 0; i < buttons.length; i++) {
             resultat = "Perdu";
         }
         document.querySelector(".resultat").innerHTML = `
-  Vous : ${joueur} </br>
-  Ordi : ${robot} <br/>
-  Résultat : ${resultat}
-`  ;
+            Vous : ${joueur} </br>
+            Ordi : ${robot} <br/>
+            Résultat : ${resultat}`;
+        const url = '/'
+        axios.get(url).then(function (response) {
+            console.log(response);
+        });
     });
 }

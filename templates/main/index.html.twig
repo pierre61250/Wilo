@@ -13,7 +13,7 @@
 		</li>
 	</ul>
 	{% if app.user %}
-		<div class="connectOrNot">
+		<div class="connectOrNot" data-user="{{ app.user.jetons|json_encode }}">
 			<div class="avatar">
 				<img src="{{ asset('icon/avatar/avatar2.png')}}" alt="Avatar player">
 			</div>

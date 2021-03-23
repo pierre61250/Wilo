@@ -19,6 +19,19 @@ class JeuxController extends AbstractController
     }
 
     /**
+     * @Route("/resultat", name="resultat")
+     */
+    public function result(Request $request): Response
+    {
+        $jetons = $request->query->get('jetons');
+        $id = $request->query->get('id');
+
+        return $this->render('jeux/resultat.html.twig', [
+            'controller_name' => 'JeuxController',
+        ]);
+    }
+
+    /**
      * @Route("/pfc",name="pfc")
      */
     public function pfc(): Response

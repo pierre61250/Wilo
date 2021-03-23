@@ -14,6 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/jeux' => [[['_route' => 'jeux', '_controller' => 'App\\Controller\\JeuxController::index'], null, null, null, false, false, null]],
+        '/resultat' => [[['_route' => 'resultat', '_controller' => 'App\\Controller\\JeuxController::result'], null, null, null, false, false, null]],
         '/pfc' => [[['_route' => 'pfc', '_controller' => 'App\\Controller\\JeuxController::pfc'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
