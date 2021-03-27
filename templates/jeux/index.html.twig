@@ -6,6 +6,10 @@
 
 {% block body %}
 
-	<a href="{{path('pfc')}}">Pierre Feuille Ciseaux</a>
+	{% if app.user %}
+		<a href="{{path('pfc')}}">Pierre Feuille Ciseaux</a>
+	{% else %}
+		{{ render(controller('App\\Controller\\RegistrationController::register')) }}
+	{% endif %}
 
 {% endblock %}

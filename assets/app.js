@@ -8,10 +8,10 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 import './styles/pfc.css';
+import './styles/login.css';
 
 // start the Stimulus application
 import './bootstrap';
-const axios = require('axios');
 
 var userRating = document.querySelector('.connectOrNot');
 var user = userRating.dataset.user;
@@ -39,9 +39,5 @@ for (let i = 0; i < buttons.length; i++) {
             Vous : ${joueur} </br>
             Ordi : ${robot} <br/>
             Résultat : ${resultat}`;
-        const url = '/'
-        axios.get(url).then(function (response) {
-            console.log(response);
-        });
     });
 }

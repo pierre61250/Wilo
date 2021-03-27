@@ -88,11 +88,23 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
         // line 8
         echo "
-\t<a href=\"";
+\t";
         // line 9
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pfc");
-        echo "\">Pierre Feuille Ciseaux</a>
-
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9)) {
+            // line 10
+            echo "\t\t<a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pfc");
+            echo "\">Pierre Feuille Ciseaux</a>
+\t";
+        } else {
+            // line 12
+            echo "\t\t";
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\RegistrationController::register"));
+            echo "
+\t";
+        }
+        // line 14
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -114,7 +126,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
     public function getDebugInfo()
     {
-        return array (  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  107 => 14,  101 => 12,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,7 +139,11 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
 {% block body %}
 
-\t<a href=\"{{path('pfc')}}\">Pierre Feuille Ciseaux</a>
+\t{% if app.user %}
+\t\t<a href=\"{{path('pfc')}}\">Pierre Feuille Ciseaux</a>
+\t{% else %}
+\t\t{{ render(controller('App\\\\Controller\\\\RegistrationController::register')) }}
+\t{% endif %}
 
 {% endblock %}
 ", "jeux/index.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\jeux\\index.html.twig");

@@ -5,33 +5,37 @@
 {% endblock %}
 
 {% block body %}
-	{% if app.user %}
-		<div class="connectOrNot" data-user="{{ app.user.jetons|json_encode }}">
-			<div class="avatar">
-				<img src="{{ asset('icon/avatar/avatar2.png')}}" alt="Avatar player">
+	<div class="login">
+		{% if app.user %}
+			<div class="connectOrNot" data-user="{{ app.user.jetons|json_encode }}">
+				<div class="avatar">
+					<img src="{{ asset('icon/avatar/avatar2.png')}}" alt="Avatar player">
+				</div>
+				<div class="infoCompte">
+					<div class="pseudo">
+						{{ app.user.pseudo }}
+					</div>
+					<div class="jetons">
+						<img src="{{ asset('icon/coin/coin4.png')}}" alt="Icone jeton">
+						{{ app.user.jetons }}
+					</div>
+					<div class="deconnexion" onclick="location.href='{{ path('app_logout') }}'">
+						<p>Déconnexion</p>
+					</div>
+				</div>
 			</div>
-			<div class="pseudo">
-				{{ app.user.pseudo }}
+		{% else %}
+			<div class="connexionBtn">
+				<a href="{{ path('app_login') }}">
+					<button class="btn">Connexion</button>
+				</a>
 			</div>
-			<div class="jetons">
-				<img src="{{ asset('icon/coin/coin4.png')}}" alt="Icone jeton">
-				{{ app.user.jetons }}
-			</div>
-			<div id="deconnexion">
-				<a href="{{ path('app_logout') }}">Déconnexion</a>
-			</div>
-		</div>
-	{% else %}
-		<div class="connexionBtn">
-			<a href="{{ path('app_login') }}">
-				<button>Connexion</button>
-			</a>
-		</div>
-	{% endif %}
+		{% endif %}
+	</div>
 	<div class="box">
-		<button>Pierre</button>
-		<button>Feuilles</button>
-		<button>Ciseaux</button>
+		<button class="btn">Pierre</button>
+		<button class="btn">Feuilles</button>
+		<button class="btn">Ciseaux</button>
 	</div>
 
 	<div class="resultat"></div>
