@@ -143,25 +143,59 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
         // line 35
         echo "\t</div>
 
+\t<div class=\"menu\">
+\t\t<ul id=\"navigation\">
+\t\t\t<li>
+\t\t\t\t<a href=\"";
+        // line 40
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\" title=\"Accueil\">Accueil</a>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<a href=\"";
+        // line 43
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("jeux");
+        echo "\" title=\"Jeux\">Jeux</a>
+\t\t\t</li>
+\t\t</ul>
+\t</div>
+
 \t";
-        // line 37
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37)) {
-            // line 38
-            echo "\t\t<a href=\"";
+        // line 48
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48)) {
+            // line 49
+            echo "\t\t<div class=\"carte\">
+\t\t\t<div class=\"carteImg\">
+\t\t\t\t<img src=\"";
+            // line 51
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("pfc/ciseaux.png"), "html", null, true);
+            echo "\">
+\t\t\t</div>
+\t\t\t<div class=\"carteTitre\">
+\t\t\t\t<p>Pierre</p>
+\t\t\t\t<p>Feuille</p>
+\t\t\t\t<p>Ciseaux</p>
+\t\t\t</div>
+\t\t\t<div class=\"cartePlay\" onclick=\"location.href='";
+            // line 58
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pfc");
+            echo "'\">
+\t\t\t\t<p>Jouer</p>
+\t\t\t</div>
+\t\t</div>
+\t\t<a href=\"";
+            // line 62
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pfc");
             echo "\">Pierre Feuille Ciseaux</a>
 \t";
         } else {
-            // line 40
+            // line 64
             echo "\t\t<div class=\"info\">
 \t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
 \t\t\tConnectez vous pour jouer !
 \t\t</div>
 \t";
         }
-        // line 45
-        echo "
-";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -182,7 +216,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
     public function getDebugInfo()
     {
-        return array (  163 => 45,  156 => 40,  150 => 38,  148 => 37,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  193 => 64,  188 => 62,  181 => 58,  171 => 51,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -223,7 +257,31 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t{% endif %}
 \t</div>
 
+\t<div class=\"menu\">
+\t\t<ul id=\"navigation\">
+\t\t\t<li>
+\t\t\t\t<a href=\"{{path('home')}}\" title=\"Accueil\">Accueil</a>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<a href=\"{{path('jeux')}}\" title=\"Jeux\">Jeux</a>
+\t\t\t</li>
+\t\t</ul>
+\t</div>
+
 \t{% if app.user %}
+\t\t<div class=\"carte\">
+\t\t\t<div class=\"carteImg\">
+\t\t\t\t<img src=\"{{ asset('pfc/ciseaux.png')}}\">
+\t\t\t</div>
+\t\t\t<div class=\"carteTitre\">
+\t\t\t\t<p>Pierre</p>
+\t\t\t\t<p>Feuille</p>
+\t\t\t\t<p>Ciseaux</p>
+\t\t\t</div>
+\t\t\t<div class=\"cartePlay\" onclick=\"location.href='{{ path('pfc') }}'\">
+\t\t\t\t<p>Jouer</p>
+\t\t\t</div>
+\t\t</div>
 \t\t<a href=\"{{path('pfc')}}\">Pierre Feuille Ciseaux</a>
 \t{% else %}
 \t\t<div class=\"info\">
@@ -231,7 +289,6 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\tConnectez vous pour jouer !
 \t\t</div>
 \t{% endif %}
-
 {% endblock %}
 ", "jeux/index.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\jeux\\index.html.twig");
     }

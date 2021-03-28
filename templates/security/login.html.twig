@@ -28,9 +28,9 @@
 			{% else %}
 				<h1 class="h3 mb-3 font-weight-normal">Connection</h1>
 				<label for="inputEmail"></label>
-				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="champ" placeholder="Email" required autofocus>
 				<label for="inputPassword"></label>
-				<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				<input type="password" name="password" id="inputPassword" class="champ" placeholder="Password" required>
 
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 

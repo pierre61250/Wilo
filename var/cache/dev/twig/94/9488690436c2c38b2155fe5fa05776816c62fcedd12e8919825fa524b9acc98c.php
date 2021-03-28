@@ -131,9 +131,9 @@ class __TwigTemplate_e0dd5f822d7e8e333e3771e4b672b90c3ec4ed3ab781b7381ffac6c32ff
 \t\t\t\t<input type=\"email\" value=\"";
             // line 31
             echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 31, $this->source); })()), "html", null, true);
-            echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email\" required autofocus>
+            echo "\" name=\"email\" id=\"inputEmail\" class=\"champ\" placeholder=\"Email\" required autofocus>
 \t\t\t\t<label for=\"inputPassword\"></label>
-\t\t\t\t<input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
+\t\t\t\t<input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"champ\" placeholder=\"Password\" required>
 
 \t\t\t\t<input type=\"hidden\" name=\"_csrf_token\" value=\"";
             // line 35
@@ -222,9 +222,9 @@ class __TwigTemplate_e0dd5f822d7e8e333e3771e4b672b90c3ec4ed3ab781b7381ffac6c32ff
 \t\t\t{% else %}
 \t\t\t\t<h1 class=\"h3 mb-3 font-weight-normal\">Connection</h1>
 \t\t\t\t<label for=\"inputEmail\"></label>
-\t\t\t\t<input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email\" required autofocus>
+\t\t\t\t<input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"champ\" placeholder=\"Email\" required autofocus>
 \t\t\t\t<label for=\"inputPassword\"></label>
-\t\t\t\t<input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
+\t\t\t\t<input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"champ\" placeholder=\"Password\" required>
 
 \t\t\t\t<input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
 

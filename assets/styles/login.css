@@ -23,6 +23,10 @@
     margin-right: 50px;
 }
 
+#res{
+    transform: translate(0, -15%);
+}
+
 .required{
     font-size: 1em;
     font-family: "Dosis", sans-serif;

@@ -1,0 +1,38 @@
+.carte{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px 0 grey, 0 6px 20px 0 grey;
+    border-radius: 25px;
+    width: min-content;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.carteImg img{
+    width: 80px;
+    height: auto;
+    padding: 15px;
+    text-align:center;
+    Margin : auto;
+    Display:flex;
+}
+
+.carteTitre{
+    text-align:center;
+    Margin : 0;
+}
+
+.cartePlay {
+    text-align:center;
+    Margin : 0;
+    border-top: 1px solid grey;
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+}
+
+.cartePlay:hover{
+    cursor: pointer;
+    background-color: #3498DB;
+    color: white;
+    transition: 0.5s ease all;
+}

@@ -34,7 +34,31 @@
 		{% endif %}
 	</div>
 
+	<div class="menu">
+		<ul id="navigation">
+			<li>
+				<a href="{{path('home')}}" title="Accueil">Accueil</a>
+			</li>
+			<li>
+				<a href="{{path('jeux')}}" title="Jeux">Jeux</a>
+			</li>
+		</ul>
+	</div>
+
 	{% if app.user %}
+		<div class="carte">
+			<div class="carteImg">
+				<img src="{{ asset('pfc/ciseaux.png')}}">
+			</div>
+			<div class="carteTitre">
+				<p>Pierre</p>
+				<p>Feuille</p>
+				<p>Ciseaux</p>
+			</div>
+			<div class="cartePlay" onclick="location.href='{{ path('pfc') }}'">
+				<p>Jouer</p>
+			</div>
+		</div>
 		<a href="{{path('pfc')}}">Pierre Feuille Ciseaux</a>
 	{% else %}
 		<div class="info">
@@ -42,5 +66,4 @@
 			Connectez vous pour jouer !
 		</div>
 	{% endif %}
-
 {% endblock %}
