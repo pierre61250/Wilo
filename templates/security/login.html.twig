@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block body %}
+
+	<div class="login">
+		<a href="{{ path('home') }}">
+			<span class="closebtn2">&times;</span>
+		</a>
+	</div>
+
 	<div class="center1">
 		<form method="post">
 			{% if error %}
@@ -12,7 +19,8 @@
 			{% endif %}
 
 			{% if app.user %}
-				<div class="mb-3">
+				<div class="info">
+					<span class="closebtn" role="alert" onclick="this.parentElement.style.display='none';">&times;</span>
 					Vous êtes déja connecté en tant que
 					{{ app.user.pseudo }}
 					!
@@ -33,6 +41,11 @@
 			<div class="mdpPerdu">
 				<a href="{{ path('app_forgot_password_request') }}">
 					Mot de passe perdu ?
+				</a>
+			</div>
+			<div class="mdpPerdu">
+				<a href="{{ path('app_register') }}">
+					Nous rejoindre !
 				</a>
 			</div>
 		</div>

@@ -7,6 +7,13 @@
 	{% for flashError in app.flashes('verify_email_error') %}
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
+
+	<div class="login">
+		<a href="{{ path('home') }}">
+			<span class="closebtn2">&times;</span>
+		</a>
+	</div>
+
 	<div class="center">
 		<h1>Enregistrement</h1>
 
@@ -14,25 +21,30 @@
 		{{ form_row(registrationForm.pseudo, {
             label: ' ',
 			attr: {
-    			placeholder: 'Pseudo'}
+    			placeholder: 'Pseudo',
+				class: 'champ'}
         }) }}
 		{{ form_row(registrationForm.email, {
             label: ' ',
 			attr: {
-    			placeholder: 'Email'}
+    			placeholder: 'Email',
+				class: 'champ'}
         }) }}
 		{{ form_row(registrationForm.plainPassword, {
             label: ' ',
 			attr: {
-    			placeholder: 'Mot De Passe'}
+    			placeholder: 'Mot De Passe',
+				class: 'champ'}
         }) }}
-		{{ form_row(registrationForm.agreeTerms, {
-            label: 'Accepter les termes',
-			attr: {
-    			class: 'textTerme'}
-		}) }}
+		<div class="btnCentre">
+			<div class="tcheckTerme">
+				{{ form_row(registrationForm.agreeTerms, {
+            		label: 'Accepter les termes'
+				}) }}
+			</div>
 
-		<button type="submit" class="btn">Enregistrement</button>
+			<button type="submit" class="btn" id="btnSave">Enregistrement</button>
+		</div>
 		{{ form_end(registrationForm) }}
 	</div>
 {% endblock %}

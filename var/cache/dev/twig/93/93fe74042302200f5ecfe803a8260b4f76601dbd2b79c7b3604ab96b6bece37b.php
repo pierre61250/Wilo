@@ -88,22 +88,78 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
         // line 8
         echo "
+\t<div class=\"login\">
+\t\t";
+        // line 10
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
+            // line 11
+            echo "\t\t\t<div class=\"connectOrNot\" data-user=\"";
+            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "jetons", [], "any", false, false, false, 11)), "html", null, true);
+            echo "\">
+\t\t\t\t<div class=\"avatar\">
+\t\t\t\t\t<img src=\"";
+            // line 13
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/avatar/avatar2.png"), "html", null, true);
+            echo "\" alt=\"Avatar player\">
+\t\t\t\t</div>
+\t\t\t\t<div class=\"infoCompte\">
+\t\t\t\t\t<div class=\"pseudo\">
+\t\t\t\t\t\t";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17), "pseudo", [], "any", false, false, false, 17), "html", null, true);
+            echo "
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"jetons\">
+\t\t\t\t\t\t<img src=\"";
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
+            echo "\" alt=\"Icone jeton\">
+\t\t\t\t\t\t";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "jetons", [], "any", false, false, false, 21), "html", null, true);
+            echo "
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"deconnexion\" onclick=\"location.href='";
+            // line 23
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "'\">
+\t\t\t\t\t\t<p>Déconnexion</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t";
+        } else {
+            // line 29
+            echo "\t\t\t<div class=\"connexionBtn\">
+\t\t\t\t<a href=\"";
+            // line 30
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">
+\t\t\t\t\t<button class=\"btn\">Connexion</button>
+\t\t\t\t</a>
+\t\t\t</div>
+\t\t";
+        }
+        // line 35
+        echo "\t</div>
+
 \t";
-        // line 9
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9)) {
-            // line 10
+        // line 37
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37)) {
+            // line 38
             echo "\t\t<a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pfc");
             echo "\">Pierre Feuille Ciseaux</a>
 \t";
         } else {
-            // line 12
-            echo "\t\t";
-            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\RegistrationController::register"));
-            echo "
+            // line 40
+            echo "\t\t<div class=\"info\">
+\t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
+\t\t\tConnectez vous pour jouer !
+\t\t</div>
 \t";
         }
-        // line 14
+        // line 45
         echo "
 ";
         
@@ -126,7 +182,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
     public function getDebugInfo()
     {
-        return array (  107 => 14,  101 => 12,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  163 => 45,  156 => 40,  150 => 38,  148 => 37,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -139,10 +195,41 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
 {% block body %}
 
+\t<div class=\"login\">
+\t\t{% if app.user %}
+\t\t\t<div class=\"connectOrNot\" data-user=\"{{ app.user.jetons|json_encode }}\">
+\t\t\t\t<div class=\"avatar\">
+\t\t\t\t\t<img src=\"{{ asset('icon/avatar/avatar2.png')}}\" alt=\"Avatar player\">
+\t\t\t\t</div>
+\t\t\t\t<div class=\"infoCompte\">
+\t\t\t\t\t<div class=\"pseudo\">
+\t\t\t\t\t\t{{ app.user.pseudo }}
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"jetons\">
+\t\t\t\t\t\t<img src=\"{{ asset('icon/coin/coin4.png')}}\" alt=\"Icone jeton\">
+\t\t\t\t\t\t{{ app.user.jetons }}
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"deconnexion\" onclick=\"location.href='{{ path('app_logout') }}'\">
+\t\t\t\t\t\t<p>Déconnexion</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t{% else %}
+\t\t\t<div class=\"connexionBtn\">
+\t\t\t\t<a href=\"{{ path('app_login') }}\">
+\t\t\t\t\t<button class=\"btn\">Connexion</button>
+\t\t\t\t</a>
+\t\t\t</div>
+\t\t{% endif %}
+\t</div>
+
 \t{% if app.user %}
 \t\t<a href=\"{{path('pfc')}}\">Pierre Feuille Ciseaux</a>
 \t{% else %}
-\t\t{{ render(controller('App\\\\Controller\\\\RegistrationController::register')) }}
+\t\t<div class=\"info\">
+\t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
+\t\t\tConnectez vous pour jouer !
+\t\t</div>
 \t{% endif %}
 
 {% endblock %}
