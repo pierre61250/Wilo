@@ -180,11 +180,11 @@ class __TwigTemplate_020c05b4ea2de72be289147b905630878621bf39516bfa1b1e70b962378
 \t\t{{ form_start(requestForm) }}
 \t\t<div class=\"tcheckTerme\">
 \t\t\t{{ form_row(requestForm.email, {
-                        label: ' ',
-                        attr: {
-                            placeholder: 'Email',
-                            class: 'champ'}
-                    }) }}
+                label: ' ',
+                attr: {
+                    placeholder: 'Email',
+                    class: 'champ'}
+            }) }}
 \t\t</div>
 \t\t<div class=\"tcheckTerme\">
 \t\t\t<button class=\"btn btn-primary\">Envoyer l'email</button>
