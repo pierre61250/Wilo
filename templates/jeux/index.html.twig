@@ -46,17 +46,19 @@
 	</div>
 
 	{% if app.user %}
-		<div class="carte">
-			<div class="carteImg">
-				<img src="{{ asset('icon/pfc/illustration.png')}}">
-			</div>
-			<div class="carteTitre">
-				<p>Pierre</p>
-				<p>Feuille</p>
-				<p>Ciseaux</p>
-			</div>
-			<div class="cartePlay" onclick="location.href='{{ path('pfc') }}'">
-				<p>Jouer</p>
+		<div class="deckCarte">
+			<div class="carte">
+				<div class="carteImg">
+					<img src="{{ asset('icon/pfc/illustration.png')}}">
+				</div>
+				<div class="carteTitre">
+					<p>Pierre</p>
+					<p>Feuille</p>
+					<p>Ciseaux</p>
+				</div>
+				<div class="cartePlay" onclick="location.href='{{ path('pfc') }}'">
+					<p>Jouer</p>
+				</div>
 			</div>
 		</div>
 	{% else %}

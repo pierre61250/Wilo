@@ -164,28 +164,30 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
         // line 48
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48)) {
             // line 49
-            echo "\t\t<div class=\"carte\">
-\t\t\t<div class=\"carteImg\">
-\t\t\t\t<img src=\"";
-            // line 51
+            echo "\t\t<div class=\"deckCarte\">
+\t\t\t<div class=\"carte\">
+\t\t\t\t<div class=\"carteImg\">
+\t\t\t\t\t<img src=\"";
+            // line 52
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/illustration.png"), "html", null, true);
             echo "\">
-\t\t\t</div>
-\t\t\t<div class=\"carteTitre\">
-\t\t\t\t<p>Pierre</p>
-\t\t\t\t<p>Feuille</p>
-\t\t\t\t<p>Ciseaux</p>
-\t\t\t</div>
-\t\t\t<div class=\"cartePlay\" onclick=\"location.href='";
-            // line 58
+\t\t\t\t</div>
+\t\t\t\t<div class=\"carteTitre\">
+\t\t\t\t\t<p>Pierre</p>
+\t\t\t\t\t<p>Feuille</p>
+\t\t\t\t\t<p>Ciseaux</p>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"cartePlay\" onclick=\"location.href='";
+            // line 59
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pfc");
             echo "'\">
-\t\t\t\t<p>Jouer</p>
+\t\t\t\t\t<p>Jouer</p>
+\t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
 \t";
         } else {
-            // line 63
+            // line 65
             echo "\t\t<div class=\"info\">
 \t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
 \t\t\tConnectez vous pour jouer !
@@ -212,7 +214,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
     public function getDebugInfo()
     {
-        return array (  189 => 63,  181 => 58,  171 => 51,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  191 => 65,  182 => 59,  172 => 52,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -265,17 +267,19 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t</div>
 
 \t{% if app.user %}
-\t\t<div class=\"carte\">
-\t\t\t<div class=\"carteImg\">
-\t\t\t\t<img src=\"{{ asset('icon/pfc/illustration.png')}}\">
-\t\t\t</div>
-\t\t\t<div class=\"carteTitre\">
-\t\t\t\t<p>Pierre</p>
-\t\t\t\t<p>Feuille</p>
-\t\t\t\t<p>Ciseaux</p>
-\t\t\t</div>
-\t\t\t<div class=\"cartePlay\" onclick=\"location.href='{{ path('pfc') }}'\">
-\t\t\t\t<p>Jouer</p>
+\t\t<div class=\"deckCarte\">
+\t\t\t<div class=\"carte\">
+\t\t\t\t<div class=\"carteImg\">
+\t\t\t\t\t<img src=\"{{ asset('icon/pfc/illustration.png')}}\">
+\t\t\t\t</div>
+\t\t\t\t<div class=\"carteTitre\">
+\t\t\t\t\t<p>Pierre</p>
+\t\t\t\t\t<p>Feuille</p>
+\t\t\t\t\t<p>Ciseaux</p>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"cartePlay\" onclick=\"location.href='{{ path('pfc') }}'\">
+\t\t\t\t\t<p>Jouer</p>
+\t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
 \t{% else %}
