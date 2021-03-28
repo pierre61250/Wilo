@@ -12,11 +12,17 @@
 		</a>
 	</div>
 
+	{% if error %}
+		<div class="error">
+			<span class="closebtn" role="alert" onclick="this.parentElement.style.display='none';">&times;</span>
+			<div class="alert alert-danger">
+				Erreur : Mot de passe ou Email invalid !
+			</div>
+		</div>
+	{% endif %}
+
 	<div class="center1">
 		<form method="post">
-			{% if error %}
-				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-			{% endif %}
 
 			{% if app.user %}
 				<div class="info">

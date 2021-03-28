@@ -127,6 +127,16 @@
     transform: none;
 }
 
+.error {
+    position: relative;
+    padding: 20px;
+    background-color: #E74C3C; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    transition: 0.6s;
+    font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;;
+}
+
 .info {
     padding: 20px;
     background-color: #3498DB; /* Red */
