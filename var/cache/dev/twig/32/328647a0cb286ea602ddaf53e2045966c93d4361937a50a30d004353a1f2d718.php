@@ -87,39 +87,40 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        echo "\t<div class=\"login\">
+        echo "
+\t<div class=\"login\">
 \t\t";
-        // line 9
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9)) {
-            // line 10
+        // line 10
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
+            // line 11
             echo "\t\t\t<div class=\"connectOrNot\" data-user=\"";
-            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10), "jetons", [], "any", false, false, false, 10)), "html", null, true);
+            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "jetons", [], "any", false, false, false, 11)), "html", null, true);
             echo "\">
 \t\t\t\t<div class=\"avatar\">
 \t\t\t\t\t<img src=\"";
-            // line 12
+            // line 13
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/avatar/avatar2.png"), "html", null, true);
             echo "\" alt=\"Avatar player\">
 \t\t\t\t</div>
 \t\t\t\t<div class=\"infoCompte\">
 \t\t\t\t\t<div class=\"pseudo\">
 \t\t\t\t\t\t";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "pseudo", [], "any", false, false, false, 16), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17), "pseudo", [], "any", false, false, false, 17), "html", null, true);
             echo "
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"jetons\">
 \t\t\t\t\t\t<img src=\"";
-            // line 19
+            // line 20
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
             echo "\" alt=\"Icone jeton\">
 \t\t\t\t\t\t";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20), "jetons", [], "any", false, false, false, 20), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "jetons", [], "any", false, false, false, 21), "html", null, true);
             echo "
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"deconnexion\" onclick=\"location.href='";
-            // line 22
+            // line 23
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "'\">
 \t\t\t\t\t\t<p>Déconnexion</p>
@@ -128,10 +129,10 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
 \t\t\t</div>
 \t\t";
         } else {
-            // line 28
+            // line 29
             echo "\t\t\t<div class=\"connexionBtn\">
 \t\t\t\t<a href=\"";
-            // line 29
+            // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">
 \t\t\t\t\t<button class=\"btn\">Connexion</button>
@@ -139,27 +140,72 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
 \t\t\t</div>
 \t\t";
         }
-        // line 34
+        // line 35
         echo "\t</div>
 
 \t<div class=\"game\">
-\t\t<img src=\"";
-        // line 37
+\t\t<div class=\"ordi\">
+\t\t\t<img src=\"";
+        // line 39
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/ciseaux.png"), "html", null, true);
+        echo "\" style=\"display:none;\" id=\"ciseauxOrdi\">
+\t\t\t<img src=\"";
+        // line 40
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/papier.png"), "html", null, true);
+        echo "\" style=\"display:none;\" id=\"papierOrdi\">
+\t\t\t<img src=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/pierre.png"), "html", null, true);
+        echo "\" style=\"display:none;\" id=\"pierreOrdi\">
+\t\t</div>
+\t\t<div class=\"vs\">
+\t\t\t<img src=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/vs.png"), "html", null, true);
+        echo "\">
+\t\t</div>
+\t\t<div class=\"player\">
+\t\t\t<img src=\"";
+        // line 47
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/ciseaux.png"), "html", null, true);
         echo "\" style=\"display:none;\" id=\"ciseauxPlayer\">
+\t\t\t<img src=\"";
+        // line 48
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/papier.png"), "html", null, true);
+        echo "\" style=\"display:none;\" id=\"papierPlayer\">
+\t\t\t<img src=\"";
+        // line 49
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/pierre.png"), "html", null, true);
+        echo "\" style=\"display:none;\" id=\"pierrePlayer\">
+\t\t</div>
 \t</div>
 
 \t<div class=\"box\">
-\t\t<button class=\"btn\">Pierre</button>
-\t\t<button class=\"btn\">Feuilles</button>
-\t\t<button class=\"btn\" onclick=\"ciseaux()\">Ciseaux</button>
+\t\t<button class=\"btn\" onclick=\"pierre()\" id=\"btnPierre\">Pierre</button>
+\t\t<button class=\"btn\" onclick=\"papier()\" id=\"btnFeuille\">Feuilles</button>
+\t\t<button class=\"btn\" onclick=\"ciseaux()\" id=\"btnCiseaux\">Ciseaux</button>
 \t</div>
-
-\t<div class=\"resultat\"></div>
 
 \t<script>
 \t\tfunction ciseaux() {
 document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
+disabled();
+};
+function papier() {
+document.getElementById(\"papierPlayer\").style.display = \"initial\";
+disabled();
+};
+function pierre() {
+document.getElementById(\"pierrePlayer\").style.display = \"initial\";
+disabled();
+};
+function disabled() {
+document.getElementById(\"btnPierre\").disabled = true;
+document.getElementById(\"btnFeuille\").disabled = true;
+document.getElementById(\"btnCiseaux\").disabled = true;
+document.getElementById(\"btnPierre\").style.background = \"grey\";
+document.getElementById(\"btnFeuille\").style.background = \"grey\";
+document.getElementById(\"btnCiseaux\").style.background = \"grey\";
 }
 \t</script>
 ";
@@ -183,7 +229,7 @@ document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
 
     public function getDebugInfo()
     {
-        return array (  148 => 37,  143 => 34,  135 => 29,  132 => 28,  123 => 22,  118 => 20,  114 => 19,  108 => 16,  101 => 12,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  178 => 49,  174 => 48,  170 => 47,  164 => 44,  158 => 41,  154 => 40,  150 => 39,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -195,6 +241,7 @@ document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
 {% endblock %}
 
 {% block body %}
+
 \t<div class=\"login\">
 \t\t{% if app.user %}
 \t\t\t<div class=\"connectOrNot\" data-user=\"{{ app.user.jetons|json_encode }}\">
@@ -224,20 +271,47 @@ document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
 \t</div>
 
 \t<div class=\"game\">
-\t\t<img src=\"{{ asset('icon/pfc/ciseaux.png')}}\" style=\"display:none;\" id=\"ciseauxPlayer\">
+\t\t<div class=\"ordi\">
+\t\t\t<img src=\"{{ asset('icon/pfc/ciseaux.png')}}\" style=\"display:none;\" id=\"ciseauxOrdi\">
+\t\t\t<img src=\"{{ asset('icon/pfc/papier.png')}}\" style=\"display:none;\" id=\"papierOrdi\">
+\t\t\t<img src=\"{{ asset('icon/pfc/pierre.png')}}\" style=\"display:none;\" id=\"pierreOrdi\">
+\t\t</div>
+\t\t<div class=\"vs\">
+\t\t\t<img src=\"{{ asset('icon/pfc/vs.png')}}\">
+\t\t</div>
+\t\t<div class=\"player\">
+\t\t\t<img src=\"{{ asset('icon/pfc/ciseaux.png')}}\" style=\"display:none;\" id=\"ciseauxPlayer\">
+\t\t\t<img src=\"{{ asset('icon/pfc/papier.png')}}\" style=\"display:none;\" id=\"papierPlayer\">
+\t\t\t<img src=\"{{ asset('icon/pfc/pierre.png')}}\" style=\"display:none;\" id=\"pierrePlayer\">
+\t\t</div>
 \t</div>
 
 \t<div class=\"box\">
-\t\t<button class=\"btn\">Pierre</button>
-\t\t<button class=\"btn\">Feuilles</button>
-\t\t<button class=\"btn\" onclick=\"ciseaux()\">Ciseaux</button>
+\t\t<button class=\"btn\" onclick=\"pierre()\" id=\"btnPierre\">Pierre</button>
+\t\t<button class=\"btn\" onclick=\"papier()\" id=\"btnFeuille\">Feuilles</button>
+\t\t<button class=\"btn\" onclick=\"ciseaux()\" id=\"btnCiseaux\">Ciseaux</button>
 \t</div>
-
-\t<div class=\"resultat\"></div>
 
 \t<script>
 \t\tfunction ciseaux() {
 document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
+disabled();
+};
+function papier() {
+document.getElementById(\"papierPlayer\").style.display = \"initial\";
+disabled();
+};
+function pierre() {
+document.getElementById(\"pierrePlayer\").style.display = \"initial\";
+disabled();
+};
+function disabled() {
+document.getElementById(\"btnPierre\").disabled = true;
+document.getElementById(\"btnFeuille\").disabled = true;
+document.getElementById(\"btnCiseaux\").disabled = true;
+document.getElementById(\"btnPierre\").style.background = \"grey\";
+document.getElementById(\"btnFeuille\").style.background = \"grey\";
+document.getElementById(\"btnCiseaux\").style.background = \"grey\";
 }
 \t</script>
 {% endblock %}

@@ -5,7 +5,13 @@ for (let i = 0; i < buttons.length; i++) {
         const joueur = buttons[i].innerHTML;
         const robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
         let resultat = "";
-        // resultat.innerHTML = joueur + "       " + robot;
+        if (robot === "Ciseaux") {
+            document.getElementById("ciseauxOrdi").style.display = "initial";
+        } else if (robot === "Feuilles") {
+            document.getElementById("papierOrdi").style.display = "initial";
+        } else if (robot === "Pierre") {
+            document.getElementById("pierreOrdi").style.display = "initial";
+        }
         if (joueur === robot) {
             resultat = "Egalité";
         }

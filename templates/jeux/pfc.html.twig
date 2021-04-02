@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+
 	<div class="login">
 		{% if app.user %}
 			<div class="connectOrNot" data-user="{{ app.user.jetons|json_encode }}">
@@ -34,28 +35,47 @@
 	</div>
 
 	<div class="game">
-		<img src="{{ asset('icon/pfc/ciseaux.png')}}" style="display:none;" id="ciseauxPlayer">
-		<img src="{{ asset('icon/pfc/papier.png')}}" style="display:none;" id="papierPlayer">
-		<img src="{{ asset('icon/pfc/pierre.png')}}" style="display:none;" id="pierrePlayer">
+		<div class="ordi">
+			<img src="{{ asset('icon/pfc/ciseaux.png')}}" style="display:none;" id="ciseauxOrdi">
+			<img src="{{ asset('icon/pfc/papier.png')}}" style="display:none;" id="papierOrdi">
+			<img src="{{ asset('icon/pfc/pierre.png')}}" style="display:none;" id="pierreOrdi">
+		</div>
+		<div class="vs">
+			<img src="{{ asset('icon/pfc/vs.png')}}">
+		</div>
+		<div class="player">
+			<img src="{{ asset('icon/pfc/ciseaux.png')}}" style="display:none;" id="ciseauxPlayer">
+			<img src="{{ asset('icon/pfc/papier.png')}}" style="display:none;" id="papierPlayer">
+			<img src="{{ asset('icon/pfc/pierre.png')}}" style="display:none;" id="pierrePlayer">
+		</div>
 	</div>
 
 	<div class="box">
-		<button class="btn" onclick="pierre()">Pierre</button>
-		<button class="btn" onclick="papier()">Feuilles</button>
-		<button class="btn" onclick="ciseaux()">Ciseaux</button>
+		<button class="btn" onclick="pierre()" id="btnPierre">Pierre</button>
+		<button class="btn" onclick="papier()" id="btnFeuille">Feuilles</button>
+		<button class="btn" onclick="ciseaux()" id="btnCiseaux">Ciseaux</button>
 	</div>
-
-	<div class="resultat"></div>
 
 	<script>
 		function ciseaux() {
-			document.getElementById("ciseauxPlayer").style.display = "initial";
-		}
-		function papier() {
-			document.getElementById("papierPlayer").style.display = "initial";
-		}
-		function pierre() {
-			document.getElementById("pierrePlayer").style.display = "initial";
-		}
+document.getElementById("ciseauxPlayer").style.display = "initial";
+disabled();
+};
+function papier() {
+document.getElementById("papierPlayer").style.display = "initial";
+disabled();
+};
+function pierre() {
+document.getElementById("pierrePlayer").style.display = "initial";
+disabled();
+};
+function disabled() {
+document.getElementById("btnPierre").disabled = true;
+document.getElementById("btnFeuille").disabled = true;
+document.getElementById("btnCiseaux").disabled = true;
+document.getElementById("btnPierre").style.background = "grey";
+document.getElementById("btnFeuille").style.background = "grey";
+document.getElementById("btnCiseaux").style.background = "grey";
+}
 	</script>
 {% endblock %}
