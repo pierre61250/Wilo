@@ -141,13 +141,27 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
         }
         // line 34
         echo "\t</div>
+
+\t<div class=\"game\">
+\t\t<img src=\"";
+        // line 37
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/ciseaux.png"), "html", null, true);
+        echo "\" style=\"display:none;\" id=\"ciseauxPlayer\">
+\t</div>
+
 \t<div class=\"box\">
 \t\t<button class=\"btn\">Pierre</button>
 \t\t<button class=\"btn\">Feuilles</button>
-\t\t<button class=\"btn\">Ciseaux</button>
+\t\t<button class=\"btn\" onclick=\"ciseaux()\">Ciseaux</button>
 \t</div>
 
 \t<div class=\"resultat\"></div>
+
+\t<script>
+\t\tfunction ciseaux() {
+document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
+}
+\t</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -169,7 +183,7 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
 
     public function getDebugInfo()
     {
-        return array (  143 => 34,  135 => 29,  132 => 28,  123 => 22,  118 => 20,  114 => 19,  108 => 16,  101 => 12,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  148 => 37,  143 => 34,  135 => 29,  132 => 28,  123 => 22,  118 => 20,  114 => 19,  108 => 16,  101 => 12,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -208,13 +222,24 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
 \t\t\t</div>
 \t\t{% endif %}
 \t</div>
+
+\t<div class=\"game\">
+\t\t<img src=\"{{ asset('icon/pfc/ciseaux.png')}}\" style=\"display:none;\" id=\"ciseauxPlayer\">
+\t</div>
+
 \t<div class=\"box\">
 \t\t<button class=\"btn\">Pierre</button>
 \t\t<button class=\"btn\">Feuilles</button>
-\t\t<button class=\"btn\">Ciseaux</button>
+\t\t<button class=\"btn\" onclick=\"ciseaux()\">Ciseaux</button>
 \t</div>
 
 \t<div class=\"resultat\"></div>
+
+\t<script>
+\t\tfunction ciseaux() {
+document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
+}
+\t</script>
 {% endblock %}
 ", "jeux/pfc.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\jeux\\pfc.html.twig");
     }

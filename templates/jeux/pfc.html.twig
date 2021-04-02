@@ -32,11 +32,22 @@
 			</div>
 		{% endif %}
 	</div>
+
+	<div class="game">
+		<img src="{{ asset('icon/pfc/ciseaux.png')}}" style="display:none;" id="ciseauxPlayer">
+	</div>
+
 	<div class="box">
 		<button class="btn">Pierre</button>
 		<button class="btn">Feuilles</button>
-		<button class="btn">Ciseaux</button>
+		<button class="btn" onclick="ciseaux()">Ciseaux</button>
 	</div>
 
 	<div class="resultat"></div>
+
+	<script>
+		function ciseaux() {
+document.getElementById("ciseauxPlayer").style.display = "initial";
+}
+	</script>
 {% endblock %}
