@@ -58,24 +58,22 @@
 
 	<script>
 		function ciseaux() {
+document.getElementById("ciseauxPlayer").style.display = "none";
+document.getElementById("papierPlayer").style.display = "none";
+document.getElementById("pierrePlayer").style.display = "none";
 document.getElementById("ciseauxPlayer").style.display = "initial";
-disabled();
 };
 function papier() {
+document.getElementById("papierPlayer").style.display = "none";
+document.getElementById("ciseauxPlayer").style.display = "none";
+document.getElementById("pierrePlayer").style.display = "none";
 document.getElementById("papierPlayer").style.display = "initial";
-disabled();
 };
 function pierre() {
+document.getElementById("pierrePlayer").style.display = "none";
+document.getElementById("papierPlayer").style.display = "none";
+document.getElementById("ciseauxPlayer").style.display = "none";
 document.getElementById("pierrePlayer").style.display = "initial";
-disabled();
 };
-function disabled() {
-document.getElementById("btnPierre").disabled = true;
-document.getElementById("btnFeuille").disabled = true;
-document.getElementById("btnCiseaux").disabled = true;
-document.getElementById("btnPierre").style.background = "grey";
-document.getElementById("btnFeuille").style.background = "grey";
-document.getElementById("btnCiseaux").style.background = "grey";
-}
 	</script>
 {% endblock %}

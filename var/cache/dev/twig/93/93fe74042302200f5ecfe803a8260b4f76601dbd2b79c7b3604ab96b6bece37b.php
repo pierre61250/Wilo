@@ -177,6 +177,13 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\t\t\t<p>Feuille</p>
 \t\t\t\t\t<p>Ciseaux</p>
 \t\t\t\t</div>
+\t\t\t\t<div class=\"carteMise\">
+\t\t\t\t\t<p>Mise :  100</p>
+\t\t\t\t\t<img src=\"";
+            // line 61
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
+            echo "\">
+\t\t\t\t</div>
 \t\t\t\t<div class=\"cartePlay\" onclick=\"playPFC()\">
 \t\t\t\t\t<p>Jouer</p>
 \t\t\t\t</div>
@@ -184,14 +191,14 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t</div>
 \t";
         } else {
-            // line 65
+            // line 69
             echo "\t\t<div class=\"info\">
 \t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
 \t\t\tConnectez vous pour jouer !
 \t\t</div>
 \t";
         }
-        // line 70
+        // line 74
         echo "\t<script>
 \t\tfunction playPFC() {
 
@@ -226,7 +233,7 @@ location.href = \"/pfc\";
 
     public function getDebugInfo()
     {
-        return array (  195 => 70,  188 => 65,  172 => 52,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  202 => 74,  195 => 69,  184 => 61,  172 => 52,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -288,6 +295,10 @@ location.href = \"/pfc\";
 \t\t\t\t\t<p>Pierre</p>
 \t\t\t\t\t<p>Feuille</p>
 \t\t\t\t\t<p>Ciseaux</p>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"carteMise\">
+\t\t\t\t\t<p>Mise :  100</p>
+\t\t\t\t\t<img src=\"{{ asset('icon/coin/coin4.png')}}\">
 \t\t\t\t</div>
 \t\t\t\t<div class=\"cartePlay\" onclick=\"playPFC()\">
 \t\t\t\t\t<p>Jouer</p>

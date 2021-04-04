@@ -188,25 +188,23 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
 
 \t<script>
 \t\tfunction ciseaux() {
+document.getElementById(\"ciseauxPlayer\").style.display = \"none\";
+document.getElementById(\"papierPlayer\").style.display = \"none\";
+document.getElementById(\"pierrePlayer\").style.display = \"none\";
 document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
-disabled();
 };
 function papier() {
+document.getElementById(\"papierPlayer\").style.display = \"none\";
+document.getElementById(\"ciseauxPlayer\").style.display = \"none\";
+document.getElementById(\"pierrePlayer\").style.display = \"none\";
 document.getElementById(\"papierPlayer\").style.display = \"initial\";
-disabled();
 };
 function pierre() {
+document.getElementById(\"pierrePlayer\").style.display = \"none\";
+document.getElementById(\"papierPlayer\").style.display = \"none\";
+document.getElementById(\"ciseauxPlayer\").style.display = \"none\";
 document.getElementById(\"pierrePlayer\").style.display = \"initial\";
-disabled();
 };
-function disabled() {
-document.getElementById(\"btnPierre\").disabled = true;
-document.getElementById(\"btnFeuille\").disabled = true;
-document.getElementById(\"btnCiseaux\").disabled = true;
-document.getElementById(\"btnPierre\").style.background = \"grey\";
-document.getElementById(\"btnFeuille\").style.background = \"grey\";
-document.getElementById(\"btnCiseaux\").style.background = \"grey\";
-}
 \t</script>
 ";
         
@@ -294,25 +292,23 @@ document.getElementById(\"btnCiseaux\").style.background = \"grey\";
 
 \t<script>
 \t\tfunction ciseaux() {
+document.getElementById(\"ciseauxPlayer\").style.display = \"none\";
+document.getElementById(\"papierPlayer\").style.display = \"none\";
+document.getElementById(\"pierrePlayer\").style.display = \"none\";
 document.getElementById(\"ciseauxPlayer\").style.display = \"initial\";
-disabled();
 };
 function papier() {
+document.getElementById(\"papierPlayer\").style.display = \"none\";
+document.getElementById(\"ciseauxPlayer\").style.display = \"none\";
+document.getElementById(\"pierrePlayer\").style.display = \"none\";
 document.getElementById(\"papierPlayer\").style.display = \"initial\";
-disabled();
 };
 function pierre() {
+document.getElementById(\"pierrePlayer\").style.display = \"none\";
+document.getElementById(\"papierPlayer\").style.display = \"none\";
+document.getElementById(\"ciseauxPlayer\").style.display = \"none\";
 document.getElementById(\"pierrePlayer\").style.display = \"initial\";
-disabled();
 };
-function disabled() {
-document.getElementById(\"btnPierre\").disabled = true;
-document.getElementById(\"btnFeuille\").disabled = true;
-document.getElementById(\"btnCiseaux\").disabled = true;
-document.getElementById(\"btnPierre\").style.background = \"grey\";
-document.getElementById(\"btnFeuille\").style.background = \"grey\";
-document.getElementById(\"btnCiseaux\").style.background = \"grey\";
-}
 \t</script>
 {% endblock %}
 ", "jeux/pfc.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\jeux\\pfc.html.twig");

@@ -60,3 +60,23 @@
     color: white;
     transition: 0.5s ease all;
 }
+
+.carteMise{
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    font-family: "Dosis", sans-serif;
+    height: min-content;
+}
+
+.carteMise p{
+    margin-right: 5px;
+}
+
+.carteMise img{
+    width: 20px;
+    height: 20px;
+    transform: translate(0, 75%);
+}
