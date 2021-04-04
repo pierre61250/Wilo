@@ -51,6 +51,8 @@ class JeuxController extends AbstractController
 
             return $this->render('jeux/resultat.html.twig', [
                 'controller_name' => 'JeuxController',
+                'result' => $result,
+                'rewards' => $mise,
             ]);
         } else if ($result == "Gagné") {
             $nbJetons = $user->getJetons();
@@ -60,10 +62,14 @@ class JeuxController extends AbstractController
 
             return $this->render('jeux/resultat.html.twig', [
                 'controller_name' => 'JeuxController',
+                'result' => $result,
+                'rewards' => (($mise*2)-(($mise*2)*20/100)),
             ]);
         } else if ($result == "Perdu") {
             return $this->render('jeux/resultat.html.twig', [
                 'controller_name' => 'JeuxController',
+                'result' => $result,
+                'rewards' => -($mise),
             ]);
         }
 

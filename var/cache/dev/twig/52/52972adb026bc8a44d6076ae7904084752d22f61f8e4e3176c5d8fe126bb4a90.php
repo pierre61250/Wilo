@@ -157,6 +157,36 @@ class __TwigTemplate_afe75367899903366617d4bf48b9a3a56f71de3ced861002bd9c654f6ae
         echo "\" title=\"Jeux\">Jeux</a>
 \t\t</li>
 \t</ul>
+
+\t<div class=\"resultat\">
+\t\t<div class=\"title-result\">
+\t\t\t<p>Vous avez
+\t\t\t\t";
+        // line 49
+        echo twig_escape_filter($this->env, (isset($context["result"]) || array_key_exists("result", $context) ? $context["result"] : (function () { throw new RuntimeError('Variable "result" does not exist.', 49, $this->source); })()), "html", null, true);
+        echo "</p>
+\t\t</div>
+\t\t<div class=\"rewards-result\">
+\t\t\t<p>";
+        // line 52
+        echo twig_escape_filter($this->env, (isset($context["rewards"]) || array_key_exists("rewards", $context) ? $context["rewards"] : (function () { throw new RuntimeError('Variable "rewards" does not exist.', 52, $this->source); })()), "html", null, true);
+        echo "</p>
+\t\t\t<img src=\"";
+        // line 53
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
+        echo "\" alt=\"Icone jeton\">
+\t\t</div>
+\t</div>
+
+\t<div class=\"btn-resultat\">
+\t\t<a href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("jeux");
+        echo "\">
+\t\t\t<button class=\"btn\">Continuer</button>
+\t\t</a>
+\t</div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -178,7 +208,7 @@ class __TwigTemplate_afe75367899903366617d4bf48b9a3a56f71de3ced861002bd9c654f6ae
 
     public function getDebugInfo()
     {
-        return array (  156 => 42,  150 => 39,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  184 => 58,  176 => 53,  172 => 52,  166 => 49,  156 => 42,  150 => 39,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -227,6 +257,24 @@ class __TwigTemplate_afe75367899903366617d4bf48b9a3a56f71de3ced861002bd9c654f6ae
 \t\t\t<a href=\"{{path('jeux')}}\" title=\"Jeux\">Jeux</a>
 \t\t</li>
 \t</ul>
+
+\t<div class=\"resultat\">
+\t\t<div class=\"title-result\">
+\t\t\t<p>Vous avez
+\t\t\t\t{{result}}</p>
+\t\t</div>
+\t\t<div class=\"rewards-result\">
+\t\t\t<p>{{rewards}}</p>
+\t\t\t<img src=\"{{ asset('icon/coin/coin4.png')}}\" alt=\"Icone jeton\">
+\t\t</div>
+\t</div>
+
+\t<div class=\"btn-resultat\">
+\t\t<a href=\"{{path('jeux')}}\">
+\t\t\t<button class=\"btn\">Continuer</button>
+\t\t</a>
+\t</div>
+
 {% endblock %}
 ", "jeux/resultat.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\jeux\\resultat.html.twig");
     }

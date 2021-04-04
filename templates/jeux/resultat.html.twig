@@ -42,4 +42,22 @@
 			<a href="{{path('jeux')}}" title="Jeux">Jeux</a>
 		</li>
 	</ul>
+
+	<div class="resultat">
+		<div class="title-result">
+			<p>Vous avez
+				{{result}}</p>
+		</div>
+		<div class="rewards-result">
+			<p>{{rewards}}</p>
+			<img src="{{ asset('icon/coin/coin4.png')}}" alt="Icone jeton">
+		</div>
+	</div>
+
+	<div class="btn-resultat">
+		<a href="{{path('jeux')}}">
+			<button class="btn">Continuer</button>
+		</a>
+	</div>
+
 {% endblock %}
