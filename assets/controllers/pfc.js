@@ -2,6 +2,9 @@ const buttons = document.querySelectorAll("button");
 var pointsPlayer = 0;
 var pointsOrdi = 0;
 
+document.getElementById("scorePlayer").innerHTML=pointsPlayer;
+document.getElementById("scoreOrdi").innerHTML=pointsOrdi;
+
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function () {
         const joueur = buttons[i].innerHTML;
@@ -41,6 +44,8 @@ for (let i = 0; i < buttons.length; i++) {
             resultat = "Perdu";
             result(resultat);
         }
+        document.getElementById("scorePlayer").innerHTML=pointsPlayer;
+        document.getElementById("scoreOrdi").innerHTML=pointsOrdi;
     });
 }
 

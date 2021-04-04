@@ -16,6 +16,7 @@ import './bootstrap';
 
 // js
 import './controllers/pfc.js';
+import './controllers/morpion.js';
 
 var userData = document.querySelector('.connectOrNot');
 var userID = userData.dataset.user;

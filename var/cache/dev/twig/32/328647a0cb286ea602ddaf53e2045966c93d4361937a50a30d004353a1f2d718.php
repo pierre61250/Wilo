@@ -180,6 +180,20 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
 \t\t</div>
 \t</div>
 
+\t<div class=\"score\">
+\t\t<div class=\"scoretitre\">
+\t\t\t<p>Scores</p>
+\t\t</div>
+\t\t<div class=\"players\">
+\t\t\t<p>Vous</p>
+\t\t\t<p class=\"scoreplayers\" id=\"scorePlayer\">0</p>
+\t\t</div>
+\t\t<div class=\"computer\">
+\t\t\t<p>Ordi</p>
+\t\t\t<p class=\"scoreordi\" id=\"scoreOrdi\">3</p>
+\t\t</div>
+\t</div>
+
 \t<div class=\"box\">
 \t\t<button class=\"btn\" onclick=\"pierre()\" id=\"btnPierre\">Pierre</button>
 \t\t<button class=\"btn\" onclick=\"papier()\" id=\"btnFeuille\">Feuilles</button>
@@ -281,6 +295,20 @@ document.getElementById(\"pierrePlayer\").style.display = \"initial\";
 \t\t\t<img src=\"{{ asset('icon/pfc/ciseaux.png')}}\" style=\"display:none;\" id=\"ciseauxPlayer\">
 \t\t\t<img src=\"{{ asset('icon/pfc/papier.png')}}\" style=\"display:none;\" id=\"papierPlayer\">
 \t\t\t<img src=\"{{ asset('icon/pfc/pierre.png')}}\" style=\"display:none;\" id=\"pierrePlayer\">
+\t\t</div>
+\t</div>
+
+\t<div class=\"score\">
+\t\t<div class=\"scoretitre\">
+\t\t\t<p>Scores</p>
+\t\t</div>
+\t\t<div class=\"players\">
+\t\t\t<p>Vous</p>
+\t\t\t<p class=\"scoreplayers\" id=\"scorePlayer\">0</p>
+\t\t</div>
+\t\t<div class=\"computer\">
+\t\t\t<p>Ordi</p>
+\t\t\t<p class=\"scoreordi\" id=\"scoreOrdi\">3</p>
 \t\t</div>
 \t</div>
 

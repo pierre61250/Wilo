@@ -147,3 +147,74 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .score{
+    width:max-content;
+    height: max-content 40px;
+    background-color: #FFF;
+    border: 1px;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(0, 0);
+    border: solid 1px grey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 grey, 0 6px 20px 0 grey;
+
+}
+
+.scoretitre{
+    text-align: center;
+    background-color: #3498DB;
+    border-bottom: solid 1px grey;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+    color:#FFF;
+}
+
+.players{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    justify-content: center;
+    width: 175px;
+}
+
+.players p{
+padding: 10px;
+
+}
+
+.players .scoreplayers{
+    width: max-content;
+    border: solid 1px grey;
+    margin-left: 50px;
+    border-radius: 5px;
+    background-color: #3498DB;
+    color:#fff;
+
+}
+
+.computer{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    justify-content: center;
+    width: 175px;
+}
+.computer .scoreordi{
+    width: max-content;
+    border: solid 1px grey;
+    margin-left: 50px;
+    border-radius: 5px;
+    background-color: #3498DB;
+    color:#fff;
+}
+.computer p{
+    padding: 10px;
+}

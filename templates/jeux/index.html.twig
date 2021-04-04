@@ -64,6 +64,21 @@
 					<p>Jouer</p>
 				</div>
 			</div>
+			<div class="carte">
+				<div class="carteImg">
+					<img src="{{ asset('icon/morpion/morpion.png')}}">
+				</div>
+				<div class="carteTitre">
+					<p>Morpion</p>
+				</div>
+				<div class="carteMise">
+					<p>Mise :  100</p>
+					<img src="{{ asset('icon/coin/coin4.png')}}">
+				</div>
+				<div class="cartePlay" onclick="playMorpion()">
+					<p>Jouer</p>
+				</div>
+			</div>
 		</div>
 	{% else %}
 		<div class="info">
@@ -81,6 +96,18 @@ var userID = userData.dataset.user;
 document.cookie = `id=` + userID + `; expires=${expires}`;
 document.cookie = `mise=` + 100 + `; expires=${expires}`;
 location.href = "/pfc";
+
+}
+
+function playMorpion() {
+
+const expires = new Date(Date.now() + 1000).toUTCString();
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+document.cookie = `id=` + userID + `; expires=${expires}`;
+document.cookie = `mise=` + 100 + `; expires=${expires}`;
+location.href = "/morpion";
 
 }
 	</script>

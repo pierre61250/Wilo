@@ -143,7 +143,7 @@ function estValide(button) {
             afficheur.sendMessage(
               "Le joueur " +
                 joueurs[tour] +
-                ' a gagné ! <br /> <a href="morpion.html">Rejouer</a>'
+                ' a gagné ! <br /> <a href="/morpion">Rejouer</a>'
             );
             return;
           }

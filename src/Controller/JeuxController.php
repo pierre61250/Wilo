@@ -105,4 +105,35 @@ class JeuxController extends AbstractController
             'controller_name' => 'JeuxController',
         ]);
     }
+
+    /**
+     * @Route("/morpion",name="morpion")
+     */
+    public function morpion(Request $request): Response
+    {
+        $id = $request->cookies->get('id');
+        $mise = $request->cookies->get('mise');
+
+        if ($id == null) {
+            return $this->redirectToRoute('home');
+        }
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $entityManager->getRepository(Users::class)->find($id);
+
+        if (!$user) {
+            throw $this->createNotFoundException(
+                'No user found for id '.$id
+            );
+        }
+
+        $nbJetons = $user->getJetons();
+        $user->setJetons($nbJetons-$mise);
+
+        $entityManager->flush();
+
+        return $this->render('jeux/morpion.html.twig', [
+            'controller_name' => 'JeuxController',
+        ]);
+    }
 }
