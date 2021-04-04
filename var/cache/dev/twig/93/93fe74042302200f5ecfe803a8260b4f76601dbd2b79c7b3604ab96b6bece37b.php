@@ -94,7 +94,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
             // line 11
             echo "\t\t\t<div class=\"connectOrNot\" data-user=\"";
-            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "jetons", [], "any", false, false, false, 11)), "html", null, true);
+            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "id", [], "any", false, false, false, 11)), "html", null, true);
             echo "\">
 \t\t\t\t<div class=\"avatar\">
 \t\t\t\t\t<img src=\"";
@@ -177,10 +177,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\t\t\t<p>Feuille</p>
 \t\t\t\t\t<p>Ciseaux</p>
 \t\t\t\t</div>
-\t\t\t\t<div class=\"cartePlay\" onclick=\"location.href='";
-            // line 59
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pfc");
-            echo "'\">
+\t\t\t\t<div class=\"cartePlay\" onclick=\"playPFC()\">
 \t\t\t\t\t<p>Jouer</p>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -194,6 +191,21 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t</div>
 \t";
         }
+        // line 70
+        echo "\t<script>
+\t\tfunction playPFC() {
+
+const expires = new Date(Date.now() + 1000).toUTCString();
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+document.cookie = `id=` + userID + `; expires=\${expires}`;
+document.cookie = `mise=` + 100 + `; expires=\${expires}`;
+location.href = \"/pfc\";
+
+}
+\t</script>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -214,7 +226,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
     public function getDebugInfo()
     {
-        return array (  191 => 65,  182 => 59,  172 => 52,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  195 => 70,  188 => 65,  172 => 52,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -229,7 +241,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
 \t<div class=\"login\">
 \t\t{% if app.user %}
-\t\t\t<div class=\"connectOrNot\" data-user=\"{{ app.user.jetons|json_encode }}\">
+\t\t\t<div class=\"connectOrNot\" data-user=\"{{ app.user.id|json_encode }}\">
 \t\t\t\t<div class=\"avatar\">
 \t\t\t\t\t<img src=\"{{ asset('icon/avatar/avatar2.png')}}\" alt=\"Avatar player\">
 \t\t\t\t</div>
@@ -277,7 +289,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\t\t\t<p>Feuille</p>
 \t\t\t\t\t<p>Ciseaux</p>
 \t\t\t\t</div>
-\t\t\t\t<div class=\"cartePlay\" onclick=\"location.href='{{ path('pfc') }}'\">
+\t\t\t\t<div class=\"cartePlay\" onclick=\"playPFC()\">
 \t\t\t\t\t<p>Jouer</p>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -288,6 +300,19 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\tConnectez vous pour jouer !
 \t\t</div>
 \t{% endif %}
+\t<script>
+\t\tfunction playPFC() {
+
+const expires = new Date(Date.now() + 1000).toUTCString();
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+document.cookie = `id=` + userID + `; expires=\${expires}`;
+document.cookie = `mise=` + 100 + `; expires=\${expires}`;
+location.href = \"/pfc\";
+
+}
+\t</script>
 {% endblock %}
 ", "jeux/index.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\jeux\\index.html.twig");
     }

@@ -17,6 +17,5 @@ import './bootstrap';
 // js
 import './controllers/pfc.js';
 
-var userRating = document.querySelector('.connectOrNot');
-var user = userRating.dataset.user;
-console.log(user);
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;

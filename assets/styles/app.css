@@ -123,6 +123,7 @@ body{
     position: fixed;
     right: 2.5%;
     top: 5%;
+    z-index: 1;
 }
 
 .nousRejoindre{

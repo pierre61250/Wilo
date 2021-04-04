@@ -94,7 +94,7 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
             // line 11
             echo "\t\t\t<div class=\"connectOrNot\" data-user=\"";
-            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "jetons", [], "any", false, false, false, 11)), "html", null, true);
+            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "id", [], "any", false, false, false, 11)), "html", null, true);
             echo "\">
 \t\t\t\t<div class=\"avatar\">
 \t\t\t\t\t<img src=\"";
@@ -244,7 +244,7 @@ document.getElementById(\"btnCiseaux\").style.background = \"grey\";
 
 \t<div class=\"login\">
 \t\t{% if app.user %}
-\t\t\t<div class=\"connectOrNot\" data-user=\"{{ app.user.jetons|json_encode }}\">
+\t\t\t<div class=\"connectOrNot\" data-user=\"{{ app.user.id|json_encode }}\">
 \t\t\t\t<div class=\"avatar\">
 \t\t\t\t\t<img src=\"{{ asset('icon/avatar/avatar2.png')}}\" alt=\"Avatar player\">
 \t\t\t\t</div>

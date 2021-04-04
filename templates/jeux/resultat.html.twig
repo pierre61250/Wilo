@@ -5,6 +5,35 @@
 {% endblock %}
 
 {% block body %}
+
+	<div class="login">
+		{% if app.user %}
+			<div class="connectOrNot" data-user="{{ app.user.id|json_encode }}">
+				<div class="avatar">
+					<img src="{{ asset('icon/avatar/avatar2.png')}}" alt="Avatar player">
+				</div>
+				<div class="infoCompte">
+					<div class="pseudo">
+						{{ app.user.pseudo }}
+					</div>
+					<div class="jetons">
+						<img src="{{ asset('icon/coin/coin4.png')}}" alt="Icone jeton">
+						{{ app.user.jetons }}
+					</div>
+					<div class="deconnexion" onclick="location.href='{{ path('app_logout') }}'">
+						<p>Déconnexion</p>
+					</div>
+				</div>
+			</div>
+		{% else %}
+			<div class="connexionBtn">
+				<a href="{{ path('app_login') }}">
+					<button class="btn">Connexion</button>
+				</a>
+			</div>
+		{% endif %}
+	</div>
+
 	<ul id="navigation">
 		<li>
 			<a href="{{path('home')}}" title="Accueil">Accueil</a>

@@ -21,9 +21,21 @@ for (let i = 0; i < buttons.length; i++) {
         else {
             resultat = "Perdu";
         }
-        document.querySelector(".resultat").innerHTML = `
-            Vous : ${joueur} </br>
-            Ordi : ${robot} <br/>
-            Résultat : ${resultat}`;
+        result(resultat);
     });
+}
+
+function result(result) {
+
+    const expires = new Date(Date.now() + 1000).toUTCString();
+    var userData = document.querySelector('.connectOrNot');
+    var userID = userData.dataset.user;
+
+    console.log(result);
+
+    document.cookie = `result=`+result+`; expires=${expires}`;
+    document.cookie = `id=`+userID+`; expires=${expires}`;
+    document.cookie = `mise=`+100+`; expires=${expires}`;
+    location.href = "/resultat";
+
 }

@@ -8,7 +8,7 @@
 
 	<div class="login">
 		{% if app.user %}
-			<div class="connectOrNot" data-user="{{ app.user.jetons|json_encode }}">
+			<div class="connectOrNot" data-user="{{ app.user.id|json_encode }}">
 				<div class="avatar">
 					<img src="{{ asset('icon/avatar/avatar2.png')}}" alt="Avatar player">
 				</div>
@@ -56,7 +56,7 @@
 					<p>Feuille</p>
 					<p>Ciseaux</p>
 				</div>
-				<div class="cartePlay" onclick="location.href='{{ path('pfc') }}'">
+				<div class="cartePlay" onclick="playPFC()">
 					<p>Jouer</p>
 				</div>
 			</div>
@@ -67,4 +67,17 @@
 			Connectez vous pour jouer !
 		</div>
 	{% endif %}
+	<script>
+		function playPFC() {
+
+const expires = new Date(Date.now() + 1000).toUTCString();
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+document.cookie = `id=` + userID + `; expires=${expires}`;
+document.cookie = `mise=` + 100 + `; expires=${expires}`;
+location.href = "/pfc";
+
+}
+	</script>
 {% endblock %}

@@ -71,13 +71,10 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $this->displayBlock('body', $context, $blocks);
         // line 19
         echo "
-\t\t<script>
-\t\t\tconsole.log(\"Failed to open the specified link\");
-\t\t</script>
 \t\t";
-        // line 23
+        // line 20
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 26
+        // line 23
         echo "\t</body>
 </html>
 ";
@@ -151,7 +148,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     }
 
-    // line 23
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -161,7 +158,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 24
+        // line 21
         echo "\t\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -186,7 +183,7 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 
     public function getDebugInfo()
     {
-        return array (  165 => 24,  155 => 23,  137 => 18,  124 => 12,  114 => 11,  103 => 7,  93 => 6,  81 => 26,  79 => 23,  73 => 19,  71 => 18,  65 => 15,  62 => 14,  59 => 11,  56 => 9,  54 => 6,  47 => 1,);
+        return array (  162 => 21,  152 => 20,  134 => 18,  121 => 12,  111 => 11,  100 => 7,  90 => 6,  78 => 23,  76 => 20,  73 => 19,  71 => 18,  65 => 15,  62 => 14,  59 => 11,  56 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -210,9 +207,6 @@ class __TwigTemplate_e48671d3cd444271280e84b9732709818c0b5e2c48b8e3ebe31b2c52bf2
 \t<body>
 \t\t{% block body %}{% endblock %}
 
-\t\t<script>
-\t\t\tconsole.log(\"Failed to open the specified link\");
-\t\t</script>
 \t\t{% block javascripts %}
 \t\t\t{{ encore_entry_script_tags('app') }}
 \t\t{% endblock %}
