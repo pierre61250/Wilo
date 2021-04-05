@@ -1,0 +1,45 @@
+.panelJeu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 grey, 0 6px 20px 0 grey;
+    border-radius: 20px;
+    border: solid 1px grey;
+}
+
+.titreJeu{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    background-color: #3498DB;
+    border-bottom: solid 1px grey;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+}
+
+.enonceJeu{
+    text-align: center;
+    color: grey;
+    padding: 0 20px;
+}
+
+.indicationJeu{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.inputJeu{
+    text-align: center;
+}
+
+.btnJeu{
+    text-align: center;
+    padding: 30px 0;
+}

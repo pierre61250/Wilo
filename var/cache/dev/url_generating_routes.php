@@ -19,6 +19,7 @@ return [
     'resultat' => [[], ['_controller' => 'App\\Controller\\JeuxController::result'], [], [['text', '/resultat']], [], []],
     'pfc' => [[], ['_controller' => 'App\\Controller\\JeuxController::pfc'], [], [['text', '/pfc']], [], []],
     'morpion' => [[], ['_controller' => 'App\\Controller\\JeuxController::morpion'], [], [['text', '/morpion']], [], []],
+    'nbMystere' => [[], ['_controller' => 'App\\Controller\\JeuxController::nbMystere'], [], [['text', '/nbMystere']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], []],

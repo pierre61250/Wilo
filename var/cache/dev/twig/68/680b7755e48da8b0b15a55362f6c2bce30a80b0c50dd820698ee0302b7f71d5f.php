@@ -143,25 +143,221 @@ class __TwigTemplate_2c3e3e3af27c4ce831c74020bc95be2d6ef62ce0d4133ee899b8ccaac2f
         // line 35
         echo "\t</div>
 
-\t<h1>Le jeu du morpion</h1>
+\t<h1 class=\"titreMorpion\">Le jeu du morpion</h1>
 \t<div id=\"Jeu\">
 \t\t<div>
-\t\t\t<button></button>
-\t\t\t<button></button>
-\t\t\t<button></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
 \t\t</div>
 \t\t<div>
-\t\t\t<button></button>
-\t\t\t<button></button>
-\t\t\t<button></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
 \t\t</div>
 \t\t<div>
-\t\t\t<button></button>
-\t\t\t<button></button>
-\t\t\t<button></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
 \t\t</div>
 \t\t<div id=\"StatutJeu\"></div>
 \t</div>
+
+\t<script>
+\t\tfunction estValide(button) {
+return button.innerHTML.length == 0;
+}
+
+function setSymbol(btn, symbole) {
+btn.innerHTML = symbole;
+}
+
+function rechercherVainqueur(pions, joueurs, tour) {
+if (pions[0].innerHTML == joueurs[tour] && pions[1].innerHTML == joueurs[tour] && pions[2].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = \"#9ACD32\";
+pions[1].style.backgroundColor = \"#9ACD32\";
+pions[2].style.backgroundColor = \"#9ACD32\";
+pions[0].style.color = \"white\";
+pions[1].style.color = \"white\";
+pions[2].style.color = \"white\";
+return true;
+}
+
+if (pions[3].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour]) {
+pions[3].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[5].style.backgroundColor = \"#9ACD32\";
+pions[3].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[5].style.color = \"white\";
+return true;
+}
+
+if (pions[6].innerHTML == joueurs[tour] && pions[7].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[6].style.backgroundColor = \"#9ACD32\";
+pions[7].style.backgroundColor = \"#9ACD32\";
+pions[8].style.backgroundColor = \"#9ACD32\";
+pions[6].style.color = \"white\";
+pions[7].style.color = \"white\";
+pions[8].style.color = \"white\";
+return true;
+}
+
+if (pions[0].innerHTML == joueurs[tour] && pions[3].innerHTML == joueurs[tour] && pions[6].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = \"#9ACD32\";
+pions[3].style.backgroundColor = \"#9ACD32\";
+pions[6].style.backgroundColor = \"#9ACD32\";
+pions[0].style.color = \"white\";
+pions[3].style.color = \"white\";
+pions[6].style.color = \"white\";
+return true;
+}
+
+if (pions[1].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[7].innerHTML == joueurs[tour]) {
+pions[1].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[7].style.backgroundColor = \"#9ACD32\";
+pions[1].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[7].style.color = \"white\";
+return true;
+}
+
+if (pions[2].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[2].style.backgroundColor = \"#9ACD32\";
+pions[5].style.backgroundColor = \"#9ACD32\";
+pions[8].style.backgroundColor = \"#9ACD32\";
+pions[2].style.color = \"white\";
+pions[5].style.color = \"white\";
+pions[8].style.color = \"white\";
+return true;
+}
+
+if (pions[0].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[8].style.backgroundColor = \"#9ACD32\";
+pions[0].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[8].style.color = \"white\";
+return true;
+}
+
+if (pions[2].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[6].innerHTML == joueurs[tour]) {
+pions[2].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[6].style.backgroundColor = \"#9ACD32\";
+pions[2].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[6].style.color = \"white\";
+return true;
+}
+}
+
+function matchNul(pions) {
+for (var i = 0, len = pions.length; i < len; i++) {
+if (pions[i].innerHTML.length == 0) 
+return false;
+
+
+
+}
+
+return true;
+}
+
+var Afficheur = function (element) {
+var affichage = element;
+
+function setText(message) {
+affichage.innerHTML = message;
+}
+
+return {sendMessage: setText};
+};
+
+function main() {
+var pions = document.querySelectorAll(\"#Jeu button\");
+var joueurs = [\"X\", \"O\"];
+var tour = 0;
+var jeuEstFini = false;
+var afficheur = new Afficheur(document.querySelector(\"#StatutJeu\"));
+afficheur.sendMessage(\"Le jeu peut commencer ! <br /> Joueur \" + joueurs[tour] + \" c'est votre tour.\");
+for (var i = 0, len = pions.length; i < len; i++) {
+pions[i].addEventListener(\"click\", function () {
+if (jeuEstFini) 
+return;
+
+
+
+if (! estValide(this)) {
+afficheur.sendMessage(\"Case occupée ! <br />Joueur \" + joueurs[tour] + \" c'est toujours à vous !\");
+} else {
+setSymbol(this, joueurs[tour]);
+jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
+
+if (jeuEstFini) {
+if (joueurs[tour] == \"X\") {
+afficheur.sendMessage('Vous avez gagné ! <br /> <a href=\"      ";
+        // line 192
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("resultat");
+        echo "\">Continuer</a>');
+result(\"Gagné\");
+} else if (joueurs[tour] == \"O\") {
+afficheur.sendMessage('Ordi a gagné ! <br /> <a href=\"      ";
+        // line 195
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("resultat");
+        echo "\">Continuer</a>');
+result(\"Perdu\");
+}
+return;
+}
+
+if (matchNul(pions)) {
+afficheur.sendMessage('Match Nul ! <br/> <a href=\"      ";
+        // line 202
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("resultat");
+        echo "\">Continuer</a>');
+result(\"Egalité\");
+return;
+}
+
+tour++;
+tour = tour % 2;
+afficheur.sendMessage(\"Joueur \" + joueurs[tour] + \" c'est à vous !\");
+if (tour == 1) {
+ordi(pions);
+}
+}
+});
+}
+}
+
+main();
+
+function ordi(pions) {
+var nb = Math.floor(Math.random() * 9);
+if (! estValide(pions[nb])) {
+ordi(pions);
+} else {
+pions[nb].click();
+}
+
+}
+
+function result(result) {
+
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+console.log(result);
+
+document.cookie = `result=` + result;
+document.cookie = `id=` + userID;
+document.cookie = `mise=` + 100;
+
+}
+\t</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -183,7 +379,7 @@ class __TwigTemplate_2c3e3e3af27c4ce831c74020bc95be2d6ef62ce0d4133ee899b8ccaac2f
 
     public function getDebugInfo()
     {
-        return array (  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  319 => 202,  309 => 195,  303 => 192,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -224,25 +420,212 @@ class __TwigTemplate_2c3e3e3af27c4ce831c74020bc95be2d6ef62ce0d4133ee899b8ccaac2f
 \t\t{% endif %}
 \t</div>
 
-\t<h1>Le jeu du morpion</h1>
+\t<h1 class=\"titreMorpion\">Le jeu du morpion</h1>
 \t<div id=\"Jeu\">
 \t\t<div>
-\t\t\t<button></button>
-\t\t\t<button></button>
-\t\t\t<button></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
 \t\t</div>
 \t\t<div>
-\t\t\t<button></button>
-\t\t\t<button></button>
-\t\t\t<button></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
 \t\t</div>
 \t\t<div>
-\t\t\t<button></button>
-\t\t\t<button></button>
-\t\t\t<button></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
+\t\t\t<button class=\"btnMorpion\"></button>
 \t\t</div>
 \t\t<div id=\"StatutJeu\"></div>
 \t</div>
+
+\t<script>
+\t\tfunction estValide(button) {
+return button.innerHTML.length == 0;
+}
+
+function setSymbol(btn, symbole) {
+btn.innerHTML = symbole;
+}
+
+function rechercherVainqueur(pions, joueurs, tour) {
+if (pions[0].innerHTML == joueurs[tour] && pions[1].innerHTML == joueurs[tour] && pions[2].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = \"#9ACD32\";
+pions[1].style.backgroundColor = \"#9ACD32\";
+pions[2].style.backgroundColor = \"#9ACD32\";
+pions[0].style.color = \"white\";
+pions[1].style.color = \"white\";
+pions[2].style.color = \"white\";
+return true;
+}
+
+if (pions[3].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour]) {
+pions[3].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[5].style.backgroundColor = \"#9ACD32\";
+pions[3].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[5].style.color = \"white\";
+return true;
+}
+
+if (pions[6].innerHTML == joueurs[tour] && pions[7].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[6].style.backgroundColor = \"#9ACD32\";
+pions[7].style.backgroundColor = \"#9ACD32\";
+pions[8].style.backgroundColor = \"#9ACD32\";
+pions[6].style.color = \"white\";
+pions[7].style.color = \"white\";
+pions[8].style.color = \"white\";
+return true;
+}
+
+if (pions[0].innerHTML == joueurs[tour] && pions[3].innerHTML == joueurs[tour] && pions[6].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = \"#9ACD32\";
+pions[3].style.backgroundColor = \"#9ACD32\";
+pions[6].style.backgroundColor = \"#9ACD32\";
+pions[0].style.color = \"white\";
+pions[3].style.color = \"white\";
+pions[6].style.color = \"white\";
+return true;
+}
+
+if (pions[1].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[7].innerHTML == joueurs[tour]) {
+pions[1].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[7].style.backgroundColor = \"#9ACD32\";
+pions[1].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[7].style.color = \"white\";
+return true;
+}
+
+if (pions[2].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[2].style.backgroundColor = \"#9ACD32\";
+pions[5].style.backgroundColor = \"#9ACD32\";
+pions[8].style.backgroundColor = \"#9ACD32\";
+pions[2].style.color = \"white\";
+pions[5].style.color = \"white\";
+pions[8].style.color = \"white\";
+return true;
+}
+
+if (pions[0].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[8].style.backgroundColor = \"#9ACD32\";
+pions[0].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[8].style.color = \"white\";
+return true;
+}
+
+if (pions[2].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[6].innerHTML == joueurs[tour]) {
+pions[2].style.backgroundColor = \"#9ACD32\";
+pions[4].style.backgroundColor = \"#9ACD32\";
+pions[6].style.backgroundColor = \"#9ACD32\";
+pions[2].style.color = \"white\";
+pions[4].style.color = \"white\";
+pions[6].style.color = \"white\";
+return true;
+}
+}
+
+function matchNul(pions) {
+for (var i = 0, len = pions.length; i < len; i++) {
+if (pions[i].innerHTML.length == 0) 
+return false;
+
+
+
+}
+
+return true;
+}
+
+var Afficheur = function (element) {
+var affichage = element;
+
+function setText(message) {
+affichage.innerHTML = message;
+}
+
+return {sendMessage: setText};
+};
+
+function main() {
+var pions = document.querySelectorAll(\"#Jeu button\");
+var joueurs = [\"X\", \"O\"];
+var tour = 0;
+var jeuEstFini = false;
+var afficheur = new Afficheur(document.querySelector(\"#StatutJeu\"));
+afficheur.sendMessage(\"Le jeu peut commencer ! <br /> Joueur \" + joueurs[tour] + \" c'est votre tour.\");
+for (var i = 0, len = pions.length; i < len; i++) {
+pions[i].addEventListener(\"click\", function () {
+if (jeuEstFini) 
+return;
+
+
+
+if (! estValide(this)) {
+afficheur.sendMessage(\"Case occupée ! <br />Joueur \" + joueurs[tour] + \" c'est toujours à vous !\");
+} else {
+setSymbol(this, joueurs[tour]);
+jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
+
+if (jeuEstFini) {
+if (joueurs[tour] == \"X\") {
+afficheur.sendMessage('Vous avez gagné ! <br /> <a href=\"      {{ path('resultat') }}\">Continuer</a>');
+result(\"Gagné\");
+} else if (joueurs[tour] == \"O\") {
+afficheur.sendMessage('Ordi a gagné ! <br /> <a href=\"      {{ path('resultat') }}\">Continuer</a>');
+result(\"Perdu\");
+}
+return;
+}
+
+if (matchNul(pions)) {
+afficheur.sendMessage('Match Nul ! <br/> <a href=\"      {{ path('resultat') }}\">Continuer</a>');
+result(\"Egalité\");
+return;
+}
+
+tour++;
+tour = tour % 2;
+afficheur.sendMessage(\"Joueur \" + joueurs[tour] + \" c'est à vous !\");
+if (tour == 1) {
+ordi(pions);
+}
+}
+});
+}
+}
+
+main();
+
+function ordi(pions) {
+var nb = Math.floor(Math.random() * 9);
+if (! estValide(pions[nb])) {
+ordi(pions);
+} else {
+pions[nb].click();
+}
+
+}
+
+function result(result) {
+
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+console.log(result);
+
+document.cookie = `result=` + result;
+document.cookie = `id=` + userID;
+document.cookie = `mise=` + 100;
+
+}
+\t</script>
 {% endblock %}
 ", "jeux/morpion.html.twig", "C:\\Users\\pierr\\Desktop\\wilo\\templates\\jeux\\morpion.html.twig");
     }

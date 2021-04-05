@@ -27,13 +27,19 @@
     height: min-content;
 }
 
+.carteImg {
+    padding: 15px;
+}
 .carteImg img{
     width: 100px;
     height: auto;
-    padding: 15px;
     text-align:center;
     Margin : auto;
     Display:flex;
+}
+
+.carteBorder{
+    border-radius: 15px;
 }
 
 .carteTitre{

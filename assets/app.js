@@ -10,13 +10,14 @@ import './styles/app.css';
 import './styles/pfc.css';
 import './styles/login.css';
 import './styles/jeux.css';
+import './styles/morpion.css';
+import './styles/nbMystere.css';
 
 // start the Stimulus application
 import './bootstrap';
 
 // js
 import './controllers/pfc.js';
-import './controllers/morpion.js';
 
 var userData = document.querySelector('.connectOrNot');
 var userID = userData.dataset.user;

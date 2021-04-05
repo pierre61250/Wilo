@@ -1,12 +1,26 @@
-body {
-    background-color: LightSteelBlue;
-    text-align: center;
-  }
   #Jeu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     display: inline-block;
-    background-color: SteelBlue;
+    background-color: #3498DB;
     margin: 0 auto;
     padding: 10px;
+  }
+
+  .titreMorpion{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .btnMorpion{
+    background-color: white;
+    border-radius: 5px;
+    color: #3498DB;
   }
   
   #Jeu div {

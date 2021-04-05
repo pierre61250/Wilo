@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Wilo
+{% endblock %}
+
+{% block body %}
+
+	<div class="login">
+		{% if app.user %}
+			<div class="connectOrNot" data-user="{{ app.user.id|json_encode }}">
+				<div class="avatar">
+					<img src="{{ asset('icon/avatar/avatar2.png')}}" alt="Avatar player">
+				</div>
+				<div class="infoCompte">
+					<div class="pseudo">
+						{{ app.user.pseudo }}
+					</div>
+					<div class="jetons">
+						<img src="{{ asset('icon/coin/coin4.png')}}" alt="Icone jeton">
+						{{ app.user.jetons }}
+					</div>
+					<div class="deconnexion" onclick="location.href='{{ path('app_logout') }}'">
+						<p>Déconnexion</p>
+					</div>
+				</div>
+			</div>
+		{% else %}
+			<div class="connexionBtn">
+				<a href="{{ path('app_login') }}">
+					<button class="btn">Connexion</button>
+				</a>
+			</div>
+		{% endif %}
+	</div>
+
+	<div class="menu">
+		<ul id="navigation">
+			<li>
+				<a href="{{path('home')}}" title="Accueil">Accueil</a>
+			</li>
+			<li>
+				<a href="{{path('jeux')}}" title="Jeux">Jeux</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="panelJeu">
+		<div class="titreJeu">
+			<h3>Nombre Mystère</h3>
+		</div>
+		<div class="enonceJeu">
+			<p>Trouver le nombre mystère tiré au sort entre 0 et 100 en moins de 10 coups pour remporter la partie !</p>
+		</div>
+		<div class="indicationJeu">
+			<h4 id="indication"></h4>
+		</div>
+		<div class="inputJeu">
+			<input type="number" size="2" id="inputNbMystere" min="0" max="100" value="0"></div>
+		<div class="btnJeu">
+			<button class="btn" onclick="proposer()" id="btnNbMystere">Proposer</button>
+		</div>
+	</div>
+
+	<script>
+		var nbMystere = Math.floor(Math.random() * 100);
+var nbCoups = 0;
+
+function proposer() {
+nbCoups++;
+if (document.getElementById("inputNbMystere").value == nbMystere) {
+document.getElementById("indication").innerHTML = 'Vous avez trouvé ! | Coups : ' + nbCoups;
+document.getElementById("btnNbMystere").disabled = true;
+document.getElementById("btnNbMystere").style.background = "grey";
+nbMystere = Math.floor(Math.random() * 101);
+nbCoups = 0;
+result("Gagné");
+} else if (document.getElementById("inputNbMystere").value > nbMystere && nbCoups == 10) {
+result("Perdu");
+} else if (document.getElementById("inputNbMystere").value<nbMystere && nbCoups == 10) {
+result("Perdu");
+} else if (document.getElementById("inputNbMystere").value>nbMystere) {
+document.getElementById("indication").innerHTML = 'Plus petit | Coups :' + nbCoups;
+} else if (document.getElementById("inputNbMystere").value < nbMystere) {
+document.getElementById("indication").innerHTML = 'Plus grand | Coups :' + nbCoups;
+}
+}
+
+function result(result) {
+
+const expires = new Date(Date.now() + 1000).toUTCString();
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+console.log(result);
+
+document.cookie = `result=` + result + `; expires=${expires}`;
+document.cookie = `id=` + userID + `; expires=${expires}`;
+document.cookie = `mise=` + 100 + `; expires=${expires}`;
+location.href = "/resultat";
+
+}
+	</script>
+
+{% endblock %}

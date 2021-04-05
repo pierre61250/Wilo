@@ -182,7 +182,7 @@ class __TwigTemplate_d2e5bee30ee5aa4b162526e79f32c00379369516aa13ed6b328444c1225
 
 \t<div class=\"score\">
 \t\t<div class=\"scoretitre\">
-\t\t\t<p>Scores</p>
+\t\t\t<p>Scores | Victoire en 3 pts</p>
 \t\t</div>
 \t\t<div class=\"players\">
 \t\t\t<p>Vous</p>
@@ -300,7 +300,7 @@ document.getElementById(\"pierrePlayer\").style.display = \"initial\";
 
 \t<div class=\"score\">
 \t\t<div class=\"scoretitre\">
-\t\t\t<p>Scores</p>
+\t\t\t<p>Scores | Victoire en 3 pts</p>
 \t\t</div>
 \t\t<div class=\"players\">
 \t\t\t<p>Vous</p>

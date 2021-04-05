@@ -17,6 +17,7 @@ return [
         '/resultat' => [[['_route' => 'resultat', '_controller' => 'App\\Controller\\JeuxController::result'], null, null, null, false, false, null]],
         '/pfc' => [[['_route' => 'pfc', '_controller' => 'App\\Controller\\JeuxController::pfc'], null, null, null, false, false, null]],
         '/morpion' => [[['_route' => 'morpion', '_controller' => 'App\\Controller\\JeuxController::morpion'], null, null, null, false, false, null]],
+        '/nbMystere' => [[['_route' => 'nbMystere', '_controller' => 'App\\Controller\\JeuxController::nbMystere'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],

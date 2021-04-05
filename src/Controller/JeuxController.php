@@ -18,6 +18,7 @@ class JeuxController extends AbstractController
     {
         return $this->render('jeux/index.html.twig', [
             'controller_name' => 'JeuxController',
+            'error' => null,
         ]);
     }
 
@@ -29,6 +30,14 @@ class JeuxController extends AbstractController
         $id = $request->cookies->get('id');
         $result = $request->cookies->get('result');
         $mise = $request->cookies->get('mise');
+
+        $response = new Response();
+        $response->headers->clearCookie('id');
+        $response->send();
+        $response->headers->clearCookie('result');
+        $response->send();
+        $response->headers->clearCookie('mise');
+        $response->send();
 
         if ($id == null) {
             return $this->redirectToRoute('home');
@@ -97,6 +106,12 @@ class JeuxController extends AbstractController
         }
 
         $nbJetons = $user->getJetons();
+        if ($nbJetons-$mise < 0) {
+            return $this->render('jeux/index.html.twig', [
+                'controller_name' => 'JeuxController',
+                'error' => "Vous n'avez pas assez de jetons pour participer !",
+            ]);
+        }
         $user->setJetons($nbJetons-$mise);
 
         $entityManager->flush();
@@ -128,11 +143,54 @@ class JeuxController extends AbstractController
         }
 
         $nbJetons = $user->getJetons();
+        if ($nbJetons-$mise < 0) {
+            return $this->render('jeux/index.html.twig', [
+                'controller_name' => 'JeuxController',
+                'error' => "Vous n'avez pas assez de jetons pour participer !",
+            ]);
+        }
         $user->setJetons($nbJetons-$mise);
 
         $entityManager->flush();
 
         return $this->render('jeux/morpion.html.twig', [
+            'controller_name' => 'JeuxController',
+        ]);
+    }
+
+    /**
+     * @Route("/nbMystere",name="nbMystere")
+     */
+    public function nbMystere(Request $request): Response
+    {
+        $id = $request->cookies->get('id');
+        $mise = $request->cookies->get('mise');
+
+        if ($id == null) {
+            return $this->redirectToRoute('home');
+        }
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $entityManager->getRepository(Users::class)->find($id);
+
+        if (!$user) {
+            throw $this->createNotFoundException(
+                'No user found for id '.$id
+            );
+        }
+
+        $nbJetons = $user->getJetons();
+        if ($nbJetons-$mise < 0) {
+            return $this->render('jeux/index.html.twig', [
+                'controller_name' => 'JeuxController',
+                'error' => "Vous n'avez pas assez de jetons pour participer !",
+            ]);
+        }
+        $user->setJetons($nbJetons-$mise);
+
+        $entityManager->flush();
+
+        return $this->render('jeux/nbMystere.html.twig', [
             'controller_name' => 'JeuxController',
         ]);
     }

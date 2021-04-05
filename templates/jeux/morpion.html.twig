@@ -34,23 +34,210 @@
 		{% endif %}
 	</div>
 
-	<h1>Le jeu du morpion</h1>
+	<h1 class="titreMorpion">Le jeu du morpion</h1>
 	<div id="Jeu">
 		<div>
-			<button></button>
-			<button></button>
-			<button></button>
+			<button class="btnMorpion"></button>
+			<button class="btnMorpion"></button>
+			<button class="btnMorpion"></button>
 		</div>
 		<div>
-			<button></button>
-			<button></button>
-			<button></button>
+			<button class="btnMorpion"></button>
+			<button class="btnMorpion"></button>
+			<button class="btnMorpion"></button>
 		</div>
 		<div>
-			<button></button>
-			<button></button>
-			<button></button>
+			<button class="btnMorpion"></button>
+			<button class="btnMorpion"></button>
+			<button class="btnMorpion"></button>
 		</div>
 		<div id="StatutJeu"></div>
 	</div>
+
+	<script>
+		function estValide(button) {
+return button.innerHTML.length == 0;
+}
+
+function setSymbol(btn, symbole) {
+btn.innerHTML = symbole;
+}
+
+function rechercherVainqueur(pions, joueurs, tour) {
+if (pions[0].innerHTML == joueurs[tour] && pions[1].innerHTML == joueurs[tour] && pions[2].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = "#9ACD32";
+pions[1].style.backgroundColor = "#9ACD32";
+pions[2].style.backgroundColor = "#9ACD32";
+pions[0].style.color = "white";
+pions[1].style.color = "white";
+pions[2].style.color = "white";
+return true;
+}
+
+if (pions[3].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour]) {
+pions[3].style.backgroundColor = "#9ACD32";
+pions[4].style.backgroundColor = "#9ACD32";
+pions[5].style.backgroundColor = "#9ACD32";
+pions[3].style.color = "white";
+pions[4].style.color = "white";
+pions[5].style.color = "white";
+return true;
+}
+
+if (pions[6].innerHTML == joueurs[tour] && pions[7].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[6].style.backgroundColor = "#9ACD32";
+pions[7].style.backgroundColor = "#9ACD32";
+pions[8].style.backgroundColor = "#9ACD32";
+pions[6].style.color = "white";
+pions[7].style.color = "white";
+pions[8].style.color = "white";
+return true;
+}
+
+if (pions[0].innerHTML == joueurs[tour] && pions[3].innerHTML == joueurs[tour] && pions[6].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = "#9ACD32";
+pions[3].style.backgroundColor = "#9ACD32";
+pions[6].style.backgroundColor = "#9ACD32";
+pions[0].style.color = "white";
+pions[3].style.color = "white";
+pions[6].style.color = "white";
+return true;
+}
+
+if (pions[1].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[7].innerHTML == joueurs[tour]) {
+pions[1].style.backgroundColor = "#9ACD32";
+pions[4].style.backgroundColor = "#9ACD32";
+pions[7].style.backgroundColor = "#9ACD32";
+pions[1].style.color = "white";
+pions[4].style.color = "white";
+pions[7].style.color = "white";
+return true;
+}
+
+if (pions[2].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[2].style.backgroundColor = "#9ACD32";
+pions[5].style.backgroundColor = "#9ACD32";
+pions[8].style.backgroundColor = "#9ACD32";
+pions[2].style.color = "white";
+pions[5].style.color = "white";
+pions[8].style.color = "white";
+return true;
+}
+
+if (pions[0].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[8].innerHTML == joueurs[tour]) {
+pions[0].style.backgroundColor = "#9ACD32";
+pions[4].style.backgroundColor = "#9ACD32";
+pions[8].style.backgroundColor = "#9ACD32";
+pions[0].style.color = "white";
+pions[4].style.color = "white";
+pions[8].style.color = "white";
+return true;
+}
+
+if (pions[2].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[6].innerHTML == joueurs[tour]) {
+pions[2].style.backgroundColor = "#9ACD32";
+pions[4].style.backgroundColor = "#9ACD32";
+pions[6].style.backgroundColor = "#9ACD32";
+pions[2].style.color = "white";
+pions[4].style.color = "white";
+pions[6].style.color = "white";
+return true;
+}
+}
+
+function matchNul(pions) {
+for (var i = 0, len = pions.length; i < len; i++) {
+if (pions[i].innerHTML.length == 0) 
+return false;
+
+
+
+}
+
+return true;
+}
+
+var Afficheur = function (element) {
+var affichage = element;
+
+function setText(message) {
+affichage.innerHTML = message;
+}
+
+return {sendMessage: setText};
+};
+
+function main() {
+var pions = document.querySelectorAll("#Jeu button");
+var joueurs = ["X", "O"];
+var tour = 0;
+var jeuEstFini = false;
+var afficheur = new Afficheur(document.querySelector("#StatutJeu"));
+afficheur.sendMessage("Le jeu peut commencer ! <br /> Joueur " + joueurs[tour] + " c'est votre tour.");
+for (var i = 0, len = pions.length; i < len; i++) {
+pions[i].addEventListener("click", function () {
+if (jeuEstFini) 
+return;
+
+
+
+if (! estValide(this)) {
+afficheur.sendMessage("Case occupée ! <br />Joueur " + joueurs[tour] + " c'est toujours à vous !");
+} else {
+setSymbol(this, joueurs[tour]);
+jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
+
+if (jeuEstFini) {
+if (joueurs[tour] == "X") {
+afficheur.sendMessage('Vous avez gagné ! <br /> <a href="      {{ path('resultat') }}">Continuer</a>');
+result("Gagné");
+} else if (joueurs[tour] == "O") {
+afficheur.sendMessage('Ordi a gagné ! <br /> <a href="      {{ path('resultat') }}">Continuer</a>');
+result("Perdu");
+}
+return;
+}
+
+if (matchNul(pions)) {
+afficheur.sendMessage('Match Nul ! <br/> <a href="      {{ path('resultat') }}">Continuer</a>');
+result("Egalité");
+return;
+}
+
+tour++;
+tour = tour % 2;
+afficheur.sendMessage("Joueur " + joueurs[tour] + " c'est à vous !");
+if (tour == 1) {
+ordi(pions);
+}
+}
+});
+}
+}
+
+main();
+
+function ordi(pions) {
+var nb = Math.floor(Math.random() * 9);
+if (! estValide(pions[nb])) {
+ordi(pions);
+} else {
+pions[nb].click();
+}
+
+}
+
+function result(result) {
+
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+console.log(result);
+
+document.cookie = `result=` + result;
+document.cookie = `id=` + userID;
+document.cookie = `mise=` + 100;
+
+}
+	</script>
 {% endblock %}

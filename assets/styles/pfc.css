@@ -165,7 +165,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     box-shadow: 0 4px 8px 0 grey, 0 6px 20px 0 grey;
-
+    margin: 0 auto;
 }
 
 .scoretitre{
@@ -175,6 +175,7 @@ body{
     border-top-left-radius: 19px;
     border-top-right-radius: 19px;
     color:#FFF;
+    padding: 0 10px;
 }
 
 .players{
@@ -182,7 +183,8 @@ body{
     flex-direction: row;
     padding: 10px 0;
     justify-content: center;
-    width: 175px;
+    width: max-content;
+    margin: 0 auto;
 }
 
 .players p{
@@ -205,7 +207,8 @@ padding: 10px;
     flex-direction: row;
     padding: 10px 0;
     justify-content: center;
-    width: 175px;
+    width: max-content;
+    margin: 0 auto;
 }
 .computer .scoreordi{
     width: max-content;

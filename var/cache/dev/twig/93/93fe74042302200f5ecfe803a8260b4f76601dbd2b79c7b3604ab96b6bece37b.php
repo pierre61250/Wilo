@@ -162,13 +162,28 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 
 \t";
         // line 48
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48)) {
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 48, $this->source); })())) {
             // line 49
+            echo "\t\t<div class=\"info\">
+\t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
+\t\t\t";
+            // line 51
+            echo twig_escape_filter($this->env, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 51, $this->source); })()), "html", null, true);
+            echo "
+\t\t</div>
+\t";
+        }
+        // line 54
+        echo "
+\t";
+        // line 55
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 55, $this->source); })()), "user", [], "any", false, false, false, 55)) {
+            // line 56
             echo "\t\t<div class=\"deckCarte\">
 \t\t\t<div class=\"carte\">
 \t\t\t\t<div class=\"carteImg\">
 \t\t\t\t\t<img src=\"";
-            // line 52
+            // line 59
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/pfc/illustration.png"), "html", null, true);
             echo "\">
 \t\t\t\t</div>
@@ -180,7 +195,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\t\t<div class=\"carteMise\">
 \t\t\t\t\t<p>Mise :  100</p>
 \t\t\t\t\t<img src=\"";
-            // line 61
+            // line 68
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
             echo "\">
 \t\t\t\t</div>
@@ -191,9 +206,9 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\t<div class=\"carte\">
 \t\t\t\t<div class=\"carteImg\">
 \t\t\t\t\t<img src=\"";
-            // line 69
+            // line 76
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/morpion/morpion.png"), "html", null, true);
-            echo "\">
+            echo "\" class=\"carteBorder\">
 \t\t\t\t</div>
 \t\t\t\t<div class=\"carteTitre\">
 \t\t\t\t\t<p>Morpion</p>
@@ -201,7 +216,7 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\t\t<div class=\"carteMise\">
 \t\t\t\t\t<p>Mise :  100</p>
 \t\t\t\t\t<img src=\"";
-            // line 76
+            // line 83
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
             echo "\">
 \t\t\t\t</div>
@@ -209,17 +224,38 @@ class __TwigTemplate_f3501409f0082d507a8fef85477663b666cce9c9a58a9d86dfa069469d4
 \t\t\t\t\t<p>Jouer</p>
 \t\t\t\t</div>
 \t\t\t</div>
+\t\t\t<div class=\"carte\">
+\t\t\t\t<div class=\"carteImg\">
+\t\t\t\t\t<img src=\"";
+            // line 91
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/nbMystere/illustrationNbMystere.jpg"), "html", null, true);
+            echo "\" class=\"carteBorder\">
+\t\t\t\t</div>
+\t\t\t\t<div class=\"carteTitre\">
+\t\t\t\t\t<p>Nombre Mystère</p>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"carteMise\">
+\t\t\t\t\t<p>Mise :  100</p>
+\t\t\t\t\t<img src=\"";
+            // line 98
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon/coin/coin4.png"), "html", null, true);
+            echo "\">
+\t\t\t\t</div>
+\t\t\t\t<div class=\"cartePlay\" onclick=\"playNbMystere()\">
+\t\t\t\t\t<p>Jouer</p>
+\t\t\t\t</div>
+\t\t\t</div>
 \t\t</div>
 \t";
         } else {
-            // line 84
+            // line 106
             echo "\t\t<div class=\"info\">
 \t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
 \t\t\tConnectez vous pour jouer !
 \t\t</div>
 \t";
         }
-        // line 89
+        // line 111
         echo "\t<script>
 \t\tfunction playPFC() {
 
@@ -244,6 +280,18 @@ document.cookie = `mise=` + 100 + `; expires=\${expires}`;
 location.href = \"/morpion\";
 
 }
+
+function playNbMystere() {
+
+const expires = new Date(Date.now() + 1000).toUTCString();
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+document.cookie = `id=` + userID + `; expires=\${expires}`;
+document.cookie = `mise=` + 100 + `; expires=\${expires}`;
+location.href = \"/nbMystere\";
+
+}
 \t</script>
 ";
         
@@ -266,7 +314,7 @@ location.href = \"/morpion\";
 
     public function getDebugInfo()
     {
-        return array (  223 => 89,  216 => 84,  205 => 76,  195 => 69,  184 => 61,  172 => 52,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  259 => 111,  252 => 106,  241 => 98,  231 => 91,  220 => 83,  210 => 76,  199 => 68,  187 => 59,  182 => 56,  180 => 55,  177 => 54,  171 => 51,  167 => 49,  165 => 48,  157 => 43,  151 => 40,  144 => 35,  136 => 30,  133 => 29,  124 => 23,  119 => 21,  115 => 20,  109 => 17,  102 => 13,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -318,6 +366,13 @@ location.href = \"/morpion\";
 \t\t</ul>
 \t</div>
 
+\t{% if error %}
+\t\t<div class=\"info\">
+\t\t\t<span class=\"closebtn\" role=\"alert\" onclick=\"this.parentElement.style.display='none';\">&times;</span>
+\t\t\t{{error}}
+\t\t</div>
+\t{% endif %}
+
 \t{% if app.user %}
 \t\t<div class=\"deckCarte\">
 \t\t\t<div class=\"carte\">
@@ -339,7 +394,7 @@ location.href = \"/morpion\";
 \t\t\t</div>
 \t\t\t<div class=\"carte\">
 \t\t\t\t<div class=\"carteImg\">
-\t\t\t\t\t<img src=\"{{ asset('icon/morpion/morpion.png')}}\">
+\t\t\t\t\t<img src=\"{{ asset('icon/morpion/morpion.png')}}\" class=\"carteBorder\">
 \t\t\t\t</div>
 \t\t\t\t<div class=\"carteTitre\">
 \t\t\t\t\t<p>Morpion</p>
@@ -349,6 +404,21 @@ location.href = \"/morpion\";
 \t\t\t\t\t<img src=\"{{ asset('icon/coin/coin4.png')}}\">
 \t\t\t\t</div>
 \t\t\t\t<div class=\"cartePlay\" onclick=\"playMorpion()\">
+\t\t\t\t\t<p>Jouer</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"carte\">
+\t\t\t\t<div class=\"carteImg\">
+\t\t\t\t\t<img src=\"{{ asset('icon/nbMystere/illustrationNbMystere.jpg')}}\" class=\"carteBorder\">
+\t\t\t\t</div>
+\t\t\t\t<div class=\"carteTitre\">
+\t\t\t\t\t<p>Nombre Mystère</p>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"carteMise\">
+\t\t\t\t\t<p>Mise :  100</p>
+\t\t\t\t\t<img src=\"{{ asset('icon/coin/coin4.png')}}\">
+\t\t\t\t</div>
+\t\t\t\t<div class=\"cartePlay\" onclick=\"playNbMystere()\">
 \t\t\t\t\t<p>Jouer</p>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -381,6 +451,18 @@ var userID = userData.dataset.user;
 document.cookie = `id=` + userID + `; expires=\${expires}`;
 document.cookie = `mise=` + 100 + `; expires=\${expires}`;
 location.href = \"/morpion\";
+
+}
+
+function playNbMystere() {
+
+const expires = new Date(Date.now() + 1000).toUTCString();
+var userData = document.querySelector('.connectOrNot');
+var userID = userData.dataset.user;
+
+document.cookie = `id=` + userID + `; expires=\${expires}`;
+document.cookie = `mise=` + 100 + `; expires=\${expires}`;
+location.href = \"/nbMystere\";
 
 }
 \t</script>
