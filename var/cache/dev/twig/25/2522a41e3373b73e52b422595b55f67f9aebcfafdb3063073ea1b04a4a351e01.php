@@ -157,8 +157,9 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
         // line 43
         echo "\t</div>
 \t<div class=\"nousRejoindre\">
+\t\t<p>Venez vous inscrire, pour nous rejoindre !</p>
 \t\t<a href=\"";
-        // line 45
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\">
 \t\t\t<button class=\"btn\">Nous Rejoindre</button>
@@ -185,7 +186,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 
     public function getDebugInfo()
     {
-        return array (  162 => 45,  158 => 43,  150 => 38,  147 => 37,  138 => 31,  133 => 29,  129 => 28,  123 => 25,  116 => 21,  110 => 19,  108 => 18,  100 => 13,  94 => 10,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  163 => 46,  158 => 43,  150 => 38,  147 => 37,  138 => 31,  133 => 29,  129 => 28,  123 => 25,  116 => 21,  110 => 19,  108 => 18,  100 => 13,  94 => 10,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -234,6 +235,7 @@ class __TwigTemplate_8aa2da3879c09c3b7b5ea2eeddc773e5daeb00b6c9eb413fd7726e341bf
 \t\t{% endif %}
 \t</div>
 \t<div class=\"nousRejoindre\">
+\t\t<p>Venez vous inscrire, pour nous rejoindre !</p>
 \t\t<a href=\"{{ path('app_register') }}\">
 \t\t\t<button class=\"btn\">Nous Rejoindre</button>
 \t\t</a>

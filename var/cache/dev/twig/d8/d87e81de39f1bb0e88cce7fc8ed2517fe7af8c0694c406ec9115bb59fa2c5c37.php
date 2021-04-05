@@ -187,7 +187,7 @@ if (document.getElementById(\"inputNbMystere\").value == nbMystere) {
 document.getElementById(\"indication\").innerHTML = 'Vous avez trouvé ! | Coups : ' + nbCoups;
 document.getElementById(\"btnNbMystere\").disabled = true;
 document.getElementById(\"btnNbMystere\").style.background = \"grey\";
-nbMystere = Math.floor(Math.random() * 100);
+nbMystere = Math.floor(Math.random() * 101);
 nbCoups = 0;
 result(\"Gagné\");
 } else if (document.getElementById(\"inputNbMystere\").value > nbMystere && nbCoups == 10) {
@@ -317,7 +317,7 @@ if (document.getElementById(\"inputNbMystere\").value == nbMystere) {
 document.getElementById(\"indication\").innerHTML = 'Vous avez trouvé ! | Coups : ' + nbCoups;
 document.getElementById(\"btnNbMystere\").disabled = true;
 document.getElementById(\"btnNbMystere\").style.background = \"grey\";
-nbMystere = Math.floor(Math.random() * 100);
+nbMystere = Math.floor(Math.random() * 101);
 nbCoups = 0;
 result(\"Gagné\");
 } else if (document.getElementById(\"inputNbMystere\").value > nbMystere && nbCoups == 10) {
