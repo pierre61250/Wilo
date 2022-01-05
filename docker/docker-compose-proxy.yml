@@ -18,6 +18,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.0.2
     env_file:
+      - environment/lemans-proxy.env
       - environment/dev/phpmyadmin.env
     volumes:
       - /sessions
@@ -32,6 +33,7 @@ services:
   symfony:
     image: fguntz/symfony:2.0
     env_file:
+      - environment/lemans-proxy.env
       - environment/dev/symfony.env
     volumes:
       - ./symfony/php-dev.ini:/usr/local/etc/php/php.ini:ro
