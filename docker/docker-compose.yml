@@ -61,6 +61,11 @@ services:
       - 127.0.0.1:8080:80
     restart: always
 
+  maildev:
+    image: maildev/maildev
+    ports:
+      - "1080:80"
+
 volumes:
   mysql-data:
   api-vendor:
