@@ -1,4 +1,7 @@
 {
+    "name": "wilo",
+    "description": "Projet Symfony LP - Plateforme de Mini-Jeux",
+    "author": "Pierre COLLET",
     "devDependencies": {
         "@hotwired/stimulus": "^3.0.0",
         "@symfony/stimulus-bridge": "^3.0.0",
