@@ -68,8 +68,14 @@ services:
   maildev:
     container_name: maildev
     image: maildev/maildev
+    networks:
+      lpdiwa-net:
+        aliases:
+          - maildev
     ports:
       - "1080:80"
+    restart: always
+    command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
 
 volumes:
   mysql-data:
