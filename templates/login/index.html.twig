@@ -11,12 +11,11 @@
 			<div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
 				<div class="text-center">
 					<h2 class="mt-6 text-3xl font-bold text-gray-900">
-						Welcom Back!
+						CONNECTION
 					</h2>
 					<p class="mt-2 text-sm text-gray-600">Please sign in to your account</p>
 				</div>
-				<form class="mt-8 space-y-6" action="#" method="POST">
-					<input type="hidden" name="remember" value="true">
+				<form class="mt-8 space-y-6" action="{{ path('login') }}" method="post">
 					<div class="relative">
 						<div class="absolute right-0 mt-8">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewbox="0 0 24 24" stroke="currentColor">
@@ -24,54 +23,41 @@
 							</svg>
 						</div>
 						<label class="text-sm font-bold text-gray-700 tracking-wide">Email</label>
-						<input class=" w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="mail@gmail.com" value="mail@gmail.com">
+						<input class=" w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="email" id="username" name="_username" value="{{ last_username }}" placeholder="mail@gmail.com" required oninput="checkValidityUsername" />
 					</div>
 					<div class="mt-8 content-center">
 						<label class="text-sm font-bold text-gray-700 tracking-wide">
-							Password
+							Mot de passe
 						</label>
-						<input class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your password" value="*****|">
+						<input class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="password" id="password" name="_password" placeholder="*********" required/>
 					</div>
 					<div class="flex items-center justify-between">
 						<div class="text-sm">
-							<a href="#" class="font-medium text-indigo-500 hover:text-indigo-500">
-								Forgot your password?
+							<a href="{{ path('app_forgot_password_request') }}" class="font-medium text-indigo-500 hover:text-indigo-500">
+								Mot de passe oublié ?
 							</a>
 						</div>
 					</div>
 					<div>
-						<button type="submit" class="w-full flex justify-center bg-indigo-500 text-gray-100 p-4  rounded-full tracking-wide
-																									                                font-semibold  focus:outline-none focus:shadow-outline hover:bg-indigo-600 shadow-lg cursor-pointer transition ease-in duration-300">
-							Sign in
+						<button type="submit" class="w-full flex justify-center bg-indigo-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-indigo-600 shadow-lg cursor-pointer transition ease-in duration-300">
+							Connection
 						</button>
 					</div>
 					<div class="flex items-center justify-center space-x-2">
 						<span class="h-px w-16 bg-gray-300"></span>
-						<span class="text-gray-500 font-normal">OR</span>
+						<span class="text-gray-500 font-normal">OU</span>
 						<span class="h-px w-16 bg-gray-300"></span>
 					</div>
 					<p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
-						<span>Don't have an account?</span>
-						<a href="#" class="text-indigo-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign up</a>
+						<span>Vous n'avez pas de compte ?</span>
+						<a href="{{ path('app_register') }}" class="text-indigo-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">Enregister vous</a>
 					</p>
+					<input
+					type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				{# If you want to control the URL the user is redirected to on success <input type="hidden" name="_target_path" value="/account"/> #}
 				</form>
 			</div>
 		</div>
 	</div>
 
-	<form action="{{ path('login') }}" method="post">
-		<label for="username">Email:</label>
-		<input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="_password"/>
-
-		<input
-		type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-		{# If you want to control the URL the user is redirected to on success
-										        <input type="hidden" name="_target_path" value="/account"/> #}
-
-		<button type="submit">login</button>
-	</form>
 {% endblock %}

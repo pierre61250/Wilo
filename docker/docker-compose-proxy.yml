@@ -2,6 +2,7 @@ version: '3'
 
 services:
   mysqldb:
+    container_name: mysqldb
     image: mariadb:10.4
     env_file:
       - environment/dev/mysql.env
@@ -16,6 +17,7 @@ services:
     restart: always
 
   phpmyadmin:
+    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin:5.0.2
     env_file:
       - environment/lemans-proxy.env
@@ -31,6 +33,7 @@ services:
     restart: always
   
   symfony:
+    container_name: symfony
     image: fguntz/symfony:2.0
     env_file:
       - environment/lemans-proxy.env
@@ -49,6 +52,7 @@ services:
     command: bash -c "composer install && php-fpm"
 
   http:
+    container_name: http
     image: nginx:1.19-alpine
     depends_on:
       - symfony
@@ -64,9 +68,16 @@ services:
     restart: always
 
   maildev:
+    container_name: maildev
     image: maildev/maildev
+    networks:
+      lpdiwa-net:
+        aliases:
+          - maildev
     ports:
       - "1080:80"
+    restart: always
+    command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
 
 volumes:
   mysql-data:
