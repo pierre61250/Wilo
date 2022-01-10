@@ -10,3 +10,8 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+// Scripts JS
+import './js/login';
+
+console.log('Nouveau');
