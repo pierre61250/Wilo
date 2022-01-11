@@ -1,3 +1,11 @@
+/* Framework */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* Variables Globales */
+@import "./env/colors.scss";
+@import "./env/utils.scss";
+
+/* Composants */
+@import "./components/input/input.scss";
