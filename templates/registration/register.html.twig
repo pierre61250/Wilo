@@ -18,9 +18,9 @@
 					</h2>
 				</div>
 				{{ form_start(registrationForm, {
-                        attr: {
-                            class: 'mt-10 space-y-6'
-                        }
+					attr: {
+						class: 'mt-10 space-y-6'
+					}
                 }) }}
 				<div class="relative">
 					<div class="absolute right-0 mt-8">
@@ -29,31 +29,38 @@
 						</svg>
 						<img id="svgErrorEmail" class="h-5 w-5 u-display-none" src="{{ asset('build/images/svg/error.svg') }}" alt="error"/>
 					</div>
-					<label class="text-sm font-bold text-gray-700 tracking-wide">Email</label>
+					<label class="text-sm font-bold text-gray-700 tracking-wide" for="registration_form_email">Email</label>
 					{{ form_row(registrationForm.email, {
-                            label: false,
-                            attr: {
-                                class: 'w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500'
-                            }
+						label: false,
+						attr: {
+							class: 'w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500',
+							placeholder: "mail@gmail.com",
+							oninput: 'checkEmailValidity(this)'
+						},
+						type: "email"
                     }) }}
 				</div>
 				<div class="mt-8 content-center">
-					<label class="text-sm font-bold text-gray-700 tracking-wide">
+					<label class="text-sm font-bold text-gray-700 tracking-wide" for="registration_form_plainPassword">
 						Mot de passe
 					</label>
 					{{ form_row(registrationForm.plainPassword, {
-                            label: false,
-                            attr: {
-                                class: 'w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500'
-                            }
+						label: false,
+						attr: {
+							class: 'w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500',
+							placeholder: "*********"
+						}
                     }) }}
 				</div>
 				<div class="flex items-center justify-between">
-					<div class="text-sm">
+					<div class="flex text-sm">
 						{{ form_row(registrationForm.agreeTerms, {
-                            label: false
+                            label: false,
+                            attr: {
+                                class: 'mt-1 mr-2'
+                            }
                         }) }}
-                        <label class="font-medium text-yellow-500 hover:text-yellow-600">
+						<label class="font-medium text-yellow-500 hover:text-yellow-600" for="registration_form_agreeTerms">
 							Accepter les termes
 						</label>
 					</div>
@@ -76,12 +83,4 @@
 	</div>
 </div>
 
-{# {{ form_start(registrationForm) }}
-{{ form_row(registrationForm.email) }}
-{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-{{ form_row(registrationForm.agreeTerms) }}
-
-<button type="submit" class="btn">Register</button>
-{{ form_end(registrationForm) }} #}{% endblock %}
+{% endblock %}

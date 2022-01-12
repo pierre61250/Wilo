@@ -6,9 +6,12 @@ window.checkEmailValidity = function (evt) {
         svgError.style.display = "none"
         svgSuccess.style.display = "block"
     }
-    else {
+    else if (!evt.validity.valid && (evt.value.trim()).length) {
         svgSuccess.style.display = "none"
         svgError.style.display = "block"
+    } else {
+        svgSuccess.style.display = "none"
+        svgError.style.display = "none"
     }
 };
 

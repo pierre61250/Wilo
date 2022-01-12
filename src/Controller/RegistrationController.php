@@ -48,12 +48,12 @@ class RegistrationController extends AbstractController
                 (new TemplatedEmail())
                     ->from(new Address('support@wilo.com', 'Support Wilo'))
                     ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
+                    ->subject("Confirmation d'inscription")
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('_wdt');
+            return $this->redirectToRoute('login');
         }
 
         return $this->render('registration/register.html.twig', [
