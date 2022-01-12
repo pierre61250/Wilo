@@ -1,21 +1,87 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
 
-    <h1>Register</h1>
+	<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+		<div class="relative py-3 sm:max-w-xl sm:mx-auto">
+			<div class="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+			<div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+				<div class="text-center">
+					<h2 class="mt-6 text-3xl font-bold text-gray-900">
+						CREATION DE COMPTE
+					</h2>
+				</div>
+				{{ form_start(registrationForm, {
+                        attr: {
+                            class: 'mt-10 space-y-6'
+                        }
+                }) }}
+				<div class="relative">
+					<div class="absolute right-0 mt-8">
+						<svg id="svgSuccessEmail" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 u-display-none" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+						<img id="svgErrorEmail" class="h-5 w-5 u-display-none" src="{{ asset('build/images/svg/error.svg') }}" alt="error"/>
+					</div>
+					<label class="text-sm font-bold text-gray-700 tracking-wide">Email</label>
+					{{ form_row(registrationForm.email, {
+                            label: false,
+                            attr: {
+                                class: 'w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500'
+                            }
+                    }) }}
+				</div>
+				<div class="mt-8 content-center">
+					<label class="text-sm font-bold text-gray-700 tracking-wide">
+						Mot de passe
+					</label>
+					{{ form_row(registrationForm.plainPassword, {
+                            label: false,
+                            attr: {
+                                class: 'w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500'
+                            }
+                    }) }}
+				</div>
+				<div class="flex items-center justify-between">
+					<div class="text-sm">
+						{{ form_row(registrationForm.agreeTerms, {
+                            label: false
+                        }) }}
+                        <label class="font-medium text-yellow-500 hover:text-yellow-600">
+							Accepter les termes
+						</label>
+					</div>
+				</div>
+				<div>
+					<button type="submit" class="w-full flex justify-center bg-yellow-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-yellow-600 shadow-lg cursor-pointer transition ease-in duration-300">Inscription</button>
+				</div>
+				<div class="flex items-center justify-center space-x-2">
+					<span class="h-px w-16 bg-gray-300"></span>
+					<span class="text-gray-500 font-normal">OU</span>
+					<span class="h-px w-16 bg-gray-300"></span>
+				</div>
+				<p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
+					<span>Vous avez deja un compte ?</span>
+					<a href="{{ path('login') }}" class="text-yellow-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">Se Connecter</a>
+				</p>
+				{{ form_end(registrationForm) }}
+			</form>
+		</div>
+	</div>
+</div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
+{# {{ form_start(registrationForm) }}
+{{ form_row(registrationForm.email) }}
+{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+{{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-{% endblock %}
+<button type="submit" class="btn">Register</button>
+{{ form_end(registrationForm) }} #}{% endblock %}
