@@ -13,3 +13,4 @@ import './bootstrap';
 
 /* Script JS */
 import './js/login';
+import './js/header';
