@@ -12,5 +12,6 @@ import './styles/app.scss';
 import './bootstrap';
 
 /* Script JS */
+import './js/body';
 import './js/login';
 import './js/header';

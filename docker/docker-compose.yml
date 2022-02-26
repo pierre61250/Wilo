@@ -2,31 +2,23 @@ version: '3'
 
 services:
   mysqldb:
-    container_name: mysqldb
-    image: mariadb:10.4
+    container_name: db
+    image: mariadb:10.7
     env_file:
       - environment/dev/mysql.env
     environment:
       - MYSQL_ROOT_PASSWORD=lSj58osiU12kjdj43shaSDDz
     volumes:
       - mysql-data:/var/lib/mysql
-    networks:
-      lpdiwa-net:
-        aliases:
-          - mysqldb
     restart: always
 
   phpmyadmin:
     container_name: phpmyadmin
-    image: phpmyadmin/phpmyadmin:5.0.2
+    image: phpmyadmin:5.1
     env_file:
       - environment/dev/phpmyadmin.env
     volumes:
       - /sessions
-    networks:
-      lpdiwa-net:
-        aliases:
-          - phpmyadmin
     ports:
       - 127.0.0.1:8889:80
     restart: always
@@ -40,27 +32,19 @@ services:
       - ./symfony/php-dev.ini:/usr/local/etc/php/php.ini:ro
       - ./symfony/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ../:/var/www/app
-      - api-vendor:/var/www/app/vendor
+      - app-vendor:/var/www/app/vendor
     working_dir: /var/www/app
-    networks:
-      lpdiwa-net:
-        aliases:
-          - symfony
     restart: always
     command: bash -c "composer install && php-fpm"
 
-  http:
-    container_name: http
-    image: nginx:1.19-alpine
+  www_wilo:
+    container_name: www_wilo
+    image: nginx:1.21.6-alpine
     depends_on:
       - symfony
     volumes:
       - ../:/var/www/app:ro
       - ./http/server-dev.conf:/etc/nginx/conf.d/default.conf:ro
-    networks:
-      lpdiwa-net:
-        aliases:
-          - httpsrv
     ports:
       - 127.0.0.1:8080:80
     restart: always
@@ -68,10 +52,6 @@ services:
   maildev:
     container_name: maildev
     image: maildev/maildev
-    networks:
-      lpdiwa-net:
-        aliases:
-          - maildev
     ports:
       - "1080:80"
     restart: always
@@ -79,7 +59,4 @@ services:
 
 volumes:
   mysql-data:
-  api-vendor:
-
-networks:
-  lpdiwa-net:
+  app-vendor:
