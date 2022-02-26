@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block body %}
+    <div class="pt-20"></div>
+    <div class="pt-24">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            {{ form_row(form.nom) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.tel) }}
+            {{ form_row(form.message) }}
+            {{ form_row(form.enregistrer) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
