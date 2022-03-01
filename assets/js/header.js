@@ -3,36 +3,47 @@ var header = document.getElementById("header");
 var navcontent = document.getElementById("nav-content");
 var navaction = document.getElementById("navAction");
 var toToggle = document.querySelectorAll(".toggleColour");
+var logoBlanc = document.getElementById('logo-blanc');
+var logoNoir = document.getElementById('logo-noir');
 
 document.addEventListener("scroll", function () { /*Apply classes for slide in bar*/
     scrollpos = window.scrollY;
 
     if (scrollpos > 10) {
+        logoBlanc.classList.add("u-display-none");
+        logoNoir.classList.remove("u-display-none");
         header.classList.remove('pt-8');
         header.classList.add("bg-white");
-        navaction.classList.remove("bg-white");
-        navaction.classList.add("gradient");
-        navaction.classList.remove("text-gray-800");
-        navaction.classList.add("text-white");
+        if (navaction) {
+            navaction.classList.remove("bg-white");
+            navaction.classList.add("gradient");
+            navaction.classList.remove("text-black", "opacity-75");
+            navaction.classList.add('bg-gradient-to-r', 'from-yellow-300', 'to-yellow-500');            
+        }
         // Use to switch toggleColour colours
         for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-gray-800");
+            toToggle[i].classList.add("text-black");
             toToggle[i].classList.remove("text-white");
         }
         header.classList.add("shadow");
         navcontent.classList.remove("bg-gray-100");
         navcontent.classList.add("bg-white");
     } else {
+        logoBlanc.classList.remove("u-display-none");
+        logoNoir.classList.add("u-display-none");
         header.classList.add('pt-8');
         header.classList.remove("bg-white");
-        navaction.classList.remove("gradient");
-        navaction.classList.add("bg-white");
-        navaction.classList.remove("text-white");
-        navaction.classList.add("text-gray-800");
+        if (navaction) {
+            navaction.classList.remove("gradient");
+            navaction.classList.add("bg-white", "opacity-75");
+            navaction.classList.remove("text-white");
+            navaction.classList.add("text-black");
+            navaction.classList.remove('bg-gradient-to-r', 'from-yellow-300', 'to-yellow-500');            
+        }
         // Use to switch toggleColour colours
         for (var i = 0; i < toToggle.length; i++) {
             toToggle[i].classList.add("text-white");
-            toToggle[i].classList.remove("text-gray-800");
+            toToggle[i].classList.remove("text-black");
         }
 
         header.classList.remove("shadow");

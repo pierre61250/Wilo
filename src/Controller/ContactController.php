@@ -21,12 +21,12 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dump('SEND !');
             try {
                 $entityManager->persist($contact);
                 $entityManager->flush();
+                $this->addFlash('success', 'Demande de contact envoyé');
             } catch (\Exception $e) {
-                throw $e;
+                $this->addFlash('error', "Une erreur c'est produite lors de la demande de contact");
             }
         }
 
