@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% if error %}
+		<div class="alert bg-red-200 px-6 py-4 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4">
+			<svg viewbox="0 0 24 24" class="text-red-600 w-5 h-5 sm:w-5 sm:h-5 mr-3">
+				<path fill="currentColor" d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"></path>
+			</svg>
+			<span class="text-red-800">
+				Votre mot de passe ou votre email est invalide
+			</span>
+		</div>
+	{% endif %}
+
+	<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+		<div class="relative py-3 sm:max-w-xl sm:mx-auto">
+			<div class="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+			<div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+				<div class="text-center">
+					<h2 class="mt-6 text-3xl font-bold text-gray-900">
+						CONNEXION
+					</h2>
+				</div>
+				<form class="mt-10 space-y-6" action="{{ path('login') }}" method="post">
+					<div class="relative">
+						<div class="absolute right-0 mt-8">
+							<svg id="svgSuccessEmail" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 u-display-none" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+							<img id="svgErrorEmail" class="h-5 w-5 u-display-none" src="{{ asset('build/images/svg/error.svg') }}" alt="error"/>
+						</div>
+						<label class="text-sm font-bold text-gray-700 tracking-wide" for="username">Email</label>
+						<input class=" w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500" type="email" id="username" name="_username" value="{{ last_username }}" placeholder="mail@gmail.com" required oninput="checkEmailValidity(this)"/>
+					</div>
+					<div class="mt-8 content-center">
+						<label class="text-sm font-bold text-gray-700 tracking-wide" for="password">
+							Mot de passe
+						</label>
+						<input class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-500" type="password" id="password" name="_password" placeholder="*********" required/>
+					</div>
+					<div class="flex items-center justify-between">
+						<div class="text-sm">
+							<a href="{{ path('app_forgot_password_request') }}" class="font-medium text-yellow-500 hover:text-yellow-600">
+								Mot de passe oublié ?
+							</a>
+						</div>
+					</div>
+					<div>
+						<button type="submit" class="w-full flex justify-center bg-yellow-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-yellow-600 shadow-lg cursor-pointer transition ease-in duration-300">
+							Connexion
+						</button>
+					</div>
+					<div class="flex items-center justify-center space-x-2">
+						<span class="h-px w-16 bg-gray-300"></span>
+						<span class="text-gray-500 font-normal">OU</span>
+						<span class="h-px w-16 bg-gray-300"></span>
+					</div>
+					<p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
+						<span>Vous n'avez pas de compte ?</span>
+						<a href="{{ path('app_register') }}" class="text-yellow-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">Enregister vous</a>
+					</p>
+					<input
+					type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				{# If you want to control the URL the user is redirected to on success <input type="hidden" name="_target_path" value="/account"/> #}
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

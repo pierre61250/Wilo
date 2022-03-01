@@ -1,3 +1,11 @@
+{% set pagesAllowed = [
+    'home',
+    'contact',
+    'games',
+    'nb_mystere',
+    'legal_mentions'
+] %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,12 +16,14 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-
+    </head>
+    <body>
+        {% if app.request.get('_route') in pagesAllowed %}
+            {% include './components/nav.html.twig' %}
+        {% endif %}
+        {% block body %}{% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
     </body>
 </html>

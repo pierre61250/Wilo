@@ -1,0 +1,1 @@
+document.querySelector('body').classList.add('bg-gradient-to-r', 'from-yellow-300', 'to-yellow-500');

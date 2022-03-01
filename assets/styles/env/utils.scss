@@ -1,0 +1,42 @@
+.u-display-none {
+    display: none;
+}
+
+.u-max-width {
+
+    &-50 {
+        max-width: 50%;
+    }
+
+    &-70 {
+        max-width: 70%;
+    }
+
+    &-80 {
+        max-width: 80%;
+    }
+    
+    &-90 {
+        max-width: 90%;
+    }
+
+}
+
+.u-translate {
+    transform: translate(-50%, -50%);
+}
+
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+.img-crop {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
